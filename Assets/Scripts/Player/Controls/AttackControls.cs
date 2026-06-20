@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Relentless.Player
+namespace Relentless.Player.Controls
 {
     public class AttackControls : MonoBehaviour
     {

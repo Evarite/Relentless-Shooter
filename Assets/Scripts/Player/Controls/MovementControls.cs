@@ -2,12 +2,14 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Relentless.Player
+namespace Relentless.Player.Controls
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class MovementControls : MonoBehaviour
     {
         [SerializeField] private float _speed;
+
+        public float SpeedMultiplier { get; set; } = 1f;
 
         private Rigidbody2D _rb;
 
@@ -37,7 +39,7 @@ namespace Relentless.Player
 
         private void FixedUpdate()
         {
-            _rb.linearVelocity = _input * _speed;
+            _rb.linearVelocity = _input * _speed * SpeedMultiplier;
         }
     }
 }
