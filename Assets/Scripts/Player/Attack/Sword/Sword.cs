@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Relentless.Player.Attack.Sword
 {
+    /// <summary>
+    /// Sword spins around the player, dealing the damage to all the targets. It's damage is reduced with every target.
+    /// </summary>
+
     [RequireComponent(typeof(Collider2D))]
     public class Sword : Weapon
     {

@@ -16,5 +16,5 @@ namespace Relentless.Player.Attack.Sword
 
         public float Rotations { get => _rotations; }
         public float DamageReduction { get => _damageReduction; }
-        }
-}}
+    }
+}
