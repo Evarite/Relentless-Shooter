@@ -13,7 +13,7 @@ namespace Relentless.Player.Controls
 
         private Rigidbody2D _rb;
 
-        private Vector2 _input;
+        public Vector2 Input { get; private set; }
 
         private void Awake()
         {
@@ -34,12 +34,12 @@ namespace Relentless.Player.Controls
 
         private void OnMovementChanged(InputAction.CallbackContext callbackContext)
         {
-            _input = callbackContext.ReadValue<Vector2>();
+            Input = callbackContext.ReadValue<Vector2>();
         }
 
         private void FixedUpdate()
         {
-            _rb.linearVelocity = _input * _speed * SpeedMultiplier;
+            _rb.linearVelocity = Input * _speed * SpeedMultiplier;
         }
     }
 }

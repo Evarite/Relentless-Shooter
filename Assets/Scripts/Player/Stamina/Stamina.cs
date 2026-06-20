@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace Relentless.Player.Stamina
+namespace Relentless.Player.StaminaSystem
 {
     public class Stamina : MonoBehaviour
     {
@@ -15,16 +16,19 @@ namespace Relentless.Player.Stamina
             get => _currentStamina;
             private set
             {
-                float oldValue = _currentStamina;
+                //float oldValue = _currentStamina;
+
+                //_currentStamina = Mathf.Clamp(value, _minStamina, _maxStamina);
+
+                //if (_currentStamina < oldValue)
+                //{
+                //    if (_recovery != null)
+                //        StopCoroutine(_recovery);
+                //    _recovery = StartCoroutine(Recovery());
+                //}
 
                 _currentStamina = Mathf.Clamp(value, _minStamina, _maxStamina);
-
-                if (_currentStamina < oldValue)
-                {
-                    if (_recovery != null)
-                        StopCoroutine(_recovery);
-                    _recovery = StartCoroutine(Recovery());
-                }
+                _recoveryTimer = 0f;
             }
         }
 
@@ -34,10 +38,11 @@ namespace Relentless.Player.Stamina
         [SerializeField] private float _idleTime = 3f;
 
         private Coroutine _recovery;
+        private float _recoveryTimer = 0f;
 
         private void Awake()
         {
-            CurrentStamina = _maxStamina;
+            _currentStamina = _maxStamina;
         }
 
         public bool Consume(float value)
@@ -51,17 +56,27 @@ namespace Relentless.Player.Stamina
                 return false;
         }
 
-        private IEnumerator Recovery()
+        //private IEnumerator Recovery()
+        //{
+        //    yield return new WaitForSeconds(_idleTime);
+
+        //    while (CurrentStamina < _maxStamina)
+        //    {
+        //        CurrentStamina += _staminaRecovery * Time.deltaTime;
+        //        yield return null;
+        //    }
+
+        //    _recovery = null;
+        //}
+
+        private void Update() //Recovery assigns to the field directly so that the setter doesn't get called
         {
-            yield return new WaitForSeconds(_idleTime);
-
-            while (CurrentStamina < _maxStamina)
-            {
-                CurrentStamina += _staminaRecovery * Time.deltaTime;
-                yield return null;
-            }
-
-            _recovery = null;
+            if(_currentStamina < _maxStamina)
+                if (_recoveryTimer < _idleTime)
+                    _recoveryTimer += Time.deltaTime;
+                else
+                    _currentStamina = Mathf.Min(_maxStamina,
+                        _currentStamina + _staminaRecovery * Time.deltaTime);
         }
     }
 }
