@@ -31,6 +31,7 @@ namespace Relentless.Player.StaminaSystem
                 _recoveryTimer = 0f;
             }
         }
+        public float MaxStamina { get => _maxStamina; }
 
         [Header("Recovery")]
         [SerializeField] private float _staminaRecovery = 3f;

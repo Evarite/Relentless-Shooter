@@ -18,11 +18,14 @@ namespace Relentless.Player.Controls
         [SerializeField] private float _sprintSpeedMultiplier = 2f;
 
         public float IdleSpeedMultiplier { get; } = 1f;
-        public float SprintSpeedMultiplier { get => _sprintSpeedMultiplier;
-            set => _sprintSpeedMultiplier = value; }
+        public float SprintSpeedMultiplier
+        {
+            get => _sprintSpeedMultiplier;
+            set => _sprintSpeedMultiplier = value;
+        }
 
         [Header("Stamina Consumption")]
-        [Range(0.2f, 1.5f)]
+        [Range(5f, 15f)]
         [SerializeField] private float _staminaConsumption = 1f;
 
         private void Awake()
@@ -48,7 +51,7 @@ namespace Relentless.Player.Controls
             _isSprinting = true;
         }
 
-        private void OnSprintEnded(InputAction.CallbackContext callbackContext) 
+        private void OnSprintEnded(InputAction.CallbackContext callbackContext)
         {
             _isSprinting = false;
             _movementControls.SpeedMultiplier = IdleSpeedMultiplier;
@@ -56,9 +59,11 @@ namespace Relentless.Player.Controls
 
         private void Update()
         {
-            if(_isSprinting && _movementControls.Input != Vector2.zero)
+            if (_isSprinting && _movementControls.Input != Vector2.zero)
             {
-                if(!_stamina.Consume(_staminaConsumption * Time.deltaTime))
+                if (_stamina.Consume(_staminaConsumption * Time.deltaTime))
+                    _movementControls.SpeedMultiplier = SprintSpeedMultiplier;
+                else
                 {
                     _isSprinting = false;
                     _movementControls.SpeedMultiplier = IdleSpeedMultiplier;
