@@ -2,6 +2,6 @@
 {
     public interface IHittable
     {
-        void React();
+        void React(float damage);
     }
 }
