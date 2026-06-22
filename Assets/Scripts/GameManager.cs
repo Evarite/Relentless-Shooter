@@ -7,6 +7,8 @@ namespace Relentless
         public static GameManager Instance { get; private set; }
         public static InputSystemActions InputActions { get; private set; }
 
+        public static GameObject Player { get; private set; }
+
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -22,5 +24,8 @@ namespace Relentless
             InputActions.Inventory.Disable();
             InputActions.Pause.Disable();
         }
+
+        public void RegisterPlayer(GameObject player) => Player = player;
+        public void UnregisterPlayer() => Player = null;
     }
 }

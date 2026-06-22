@@ -170,6 +170,9 @@ GameObject:
   - component: {fileID: 119335984}
   - component: {fileID: 119335983}
   - component: {fileID: 119335985}
+  - component: {fileID: 119335988}
+  - component: {fileID: 119335987}
+  - component: {fileID: 119335986}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -357,6 +360,45 @@ MonoBehaviour:
   _minStamina: 0
   _staminaRecovery: 7
   _idleTime: 3
+--- !u!114 &119335986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119335978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e37e97f19ee2ca4397eae78f6dd2eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Player.HealthSystem.PlayerDeathHandler
+--- !u!114 &119335987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119335978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d466a89a5a3b44b97462391fbdde76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.HealthSystem.Heal
+  _healValue: 5
+  _idleTime: 3
+--- !u!114 &119335988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119335978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319420e783b03fd41bb454f61334c4f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.HealthSystem.Health
+  _maxHealth: 100
 --- !u!1 &295613523
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437686328}
   - component: {fileID: 437686330}
-  - component: {fileID: 437686329}
+  - component: {fileID: 437686331}
   m_Layer: 0
   m_Name: Health Slider
   m_TagString: Untagged
@@ -547,19 +589,6 @@ RectTransform:
   m_AnchoredPosition: {x: -618, y: 477}
   m_SizeDelta: {x: 297.89, y: 54.83}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &437686329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437686327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8cd7281b8262f4880862be3368f32a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Player.StaminaSystem.StaminaUIBar
-  _stamina: {fileID: 119335985}
 --- !u!114 &437686330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,6 +640,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &437686331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437686327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80147f64d4d7c3c499afc9dc25b49240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Player.HealthSystem.HealthUIBar
+  _playerHealth: {fileID: 119335988}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,8 +787,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1035425712}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543800950
@@ -1026,7 +1067,7 @@ RectTransform:
   m_Children:
   - {fileID: 1261600064}
   - {fileID: 437686328}
-  m_Father: {fileID: 519420032}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1581,3 +1622,4 @@ SceneRoots:
   - {fileID: 1464621771}
   - {fileID: 119335980}
   - {fileID: 2055057548}
+  - {fileID: 1035425712}
