@@ -12,7 +12,7 @@ namespace Relentless.CameraSystem
         private Transform _playerTransform;
         private Vector3 _currentVelocity;
 
-        private float _zOffset = 3f;
+        private float _zOffset = -10f;
 
         private void OnEnable()
         {
