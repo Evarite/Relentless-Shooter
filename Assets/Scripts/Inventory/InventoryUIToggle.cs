@@ -1,0 +1,38 @@
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
+
+namespace Relentless.Inventory
+{
+    public class InventoryUIToggle : MonoBehaviour
+    {
+        [SerializeField] private GameObject _inventory;
+        [SerializeField] private Animator _inventoryAnimator;
+
+        private void Awake()
+        {
+            _inventory.SetActive(false);
+        }
+
+        private void OnEnable()
+        {
+            GameManager.InputActions.Player.OpenInventory.performed += OpenInventory;
+            GameManager.InputActions.Inventory.CloseInventory.performed += CloseInventory;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.InputActions.Player.OpenInventory.performed -= OpenInventory;
+            GameManager.InputActions.Inventory.CloseInventory.performed -= CloseInventory;
+        }
+
+        private void OpenInventory(InputAction.CallbackContext callbackContext)
+        {
+            _inventory.SetActive(true);
+            _inventoryAnimator.SetBool("IsOpen", true);
+        }
+
+
+        private void CloseInventory(InputAction.CallbackContext callbackContext) =>
+            _inventoryAnimator.SetBool("IsOpen", false);
+    }
+}

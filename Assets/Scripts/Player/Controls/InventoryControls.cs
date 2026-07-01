@@ -4,11 +4,6 @@ using UnityEngine.InputSystem;
 
 public class InventoryControls : MonoBehaviour
 {
-    [SerializeField] private GameObject InventoryUI;
-    [SerializeField] private GameObject HUD;
-
-    private bool _isOpen = false;
-
     private void OnEnable()
     {
         GameManager.InputActions.Player.OpenInventory.performed += OpenInventory;
