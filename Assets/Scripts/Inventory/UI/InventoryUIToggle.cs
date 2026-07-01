@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Relentless.Inventory
+namespace Relentless.Inventory.UI
 {
     public class InventoryUIToggle : MonoBehaviour
     {
