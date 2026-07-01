@@ -19,7 +19,6 @@ namespace Relentless
             Instance = this;
 
             InputActions = new InputSystemActions();
-            InputActions.Global.Enable();
             ActivatePlayer();
         }
 
@@ -41,21 +40,21 @@ namespace Relentless
         public static void RegisterPlayer(GameObject player) => Player = player;
         public static void UnregisterPlayer() => Player = null;
 
-        private void ActivatePlayer()
+        public static void ActivatePlayer()
         {
             InputActions.Player.Enable();
             InputActions.Inventory.Disable();
             InputActions.Pause.Disable();
         }
 
-        private void ActivateInventory()
+        public static void ActivateInventory()
         {
             InputActions.Player.Disable();
             InputActions.Inventory.Enable();
             InputActions.Pause.Disable();
         }
 
-        private void ActivatePause()
+        public static void ActivatePause()
         {
             InputActions.Player.Disable();
             InputActions.Inventory.Disable();
