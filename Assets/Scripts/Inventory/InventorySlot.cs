@@ -1,6 +1,5 @@
 ﻿namespace Relentless.Inventory
 {
-    [System.Serializable]
     public class InventorySlot
     {
         public ItemData ItemData { get; set; }

@@ -6,9 +6,16 @@ namespace Relentless.Inventory
 {
     public class InventoryController : MonoBehaviour
     {
-        [SerializeField] private List<InventorySlot> _inventorySlots = new List<InventorySlot>();
+        [SerializeField] private int _inventorySize = 15;
+        private List<InventorySlot> _inventorySlots = new List<InventorySlot>();
 
         public event Action OnInventoryChanged;
+
+        private void Awake()
+        {
+            for (int i = 0; i < _inventorySize; i++)
+                _inventorySlots.Add(new InventorySlot(null, 0));
+        }
 
         public void AddItem(ItemData newItem, int quantity = 1)
         {
@@ -61,5 +68,7 @@ namespace Relentless.Inventory
 
             return addedSuccessfully;
         }
+
+        public InventorySlot GetSlot(int index) => _inventorySlots[index];
     }
 }
