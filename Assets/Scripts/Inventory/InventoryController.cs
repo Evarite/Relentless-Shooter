@@ -6,18 +6,27 @@ namespace Relentless.Inventory
 {
     public class InventoryController : MonoBehaviour
     {
-        [SerializeField] private int _inventorySize = 15;
-        private List<InventorySlot> _inventorySlots = new List<InventorySlot>();
+        public InventoryController Instance { get; private set; }
 
-        public event Action OnInventoryChanged;
+        private static int _inventorySize = 15;
+        private static List<InventorySlot> _inventorySlots = new List<InventorySlot>();
+
+        public static event Action OnInventoryChanged;
 
         private void Awake()
         {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+
             for (int i = 0; i < _inventorySize; i++)
                 _inventorySlots.Add(new InventorySlot(null, 0));
         }
 
-        public void AddItem(ItemData newItem, int quantity = 1)
+        public static void AddItem(ItemData newItem, int quantity = 1)
         {
             int index = _inventorySlots.FindIndex(slot =>
             slot.ItemData != null &&
@@ -47,7 +56,7 @@ namespace Relentless.Inventory
             OnInventoryChanged?.Invoke();
         }
 
-        private bool AddToFreeSlot(ItemData data, int quantity)
+        private static bool AddToFreeSlot(ItemData data, int quantity)
         {
             bool addedSuccessfully = false;
 
@@ -74,6 +83,6 @@ namespace Relentless.Inventory
             return addedSuccessfully;
         }
 
-        public InventorySlot GetSlot(int index) => _inventorySlots[index];
+        public static InventorySlot GetSlot(int index) => _inventorySlots[index];
     }
 }
