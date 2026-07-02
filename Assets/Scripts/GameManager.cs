@@ -1,3 +1,5 @@
+using Relentless.Inventory;
+using System;
 using UnityEngine;
 
 namespace Relentless
@@ -6,7 +8,6 @@ namespace Relentless
     {
         public static GameManager Instance { get; private set; }
         public static InputSystemActions InputActions { get; private set; }
-
         public static GameObject Player { get; private set; }
 
         private void Awake()
@@ -20,16 +21,6 @@ namespace Relentless
 
             InputActions = new InputSystemActions();
             ActivatePlayer();
-        }
-
-        private void OnEnable()
-        {
-            //Subscribe to the switching aciton maps events (in another branch)
-        }
-
-        private void OnDisable()
-        {
-            //Unsibscribe
         }
 
         private void OnDestroy()

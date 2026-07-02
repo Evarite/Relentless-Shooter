@@ -22,6 +22,7 @@ namespace Relentless.Inventory
             int index = _inventorySlots.FindIndex(slot =>
             slot.ItemData != null &&
             slot.ItemData.IsStackable &&
+            slot.Quantity != slot.ItemData.MaxStackSize &&
             slot.ItemData == newItem);
 
             if (index != -1)
@@ -56,8 +57,12 @@ namespace Relentless.Inventory
 
                 if (freeIndex != -1)
                 {
-                    _inventorySlots[freeIndex] = new InventorySlot(data,
-                        Mathf.Min(quantity, data.MaxStackSize));
+                    //_inventorySlots[freeIndex] = new InventorySlot(data,
+                    //    Mathf.Min(quantity, data.MaxStackSize));
+                    _inventorySlots[freeIndex].ItemData = data;
+                    _inventorySlots[freeIndex].Quantity = Mathf.Min(quantity, data.MaxStackSize);
+
+                    Debug.Log($"{data.Name}, {_inventorySlots[freeIndex].ItemData.Name}");
                     quantity -= data.MaxStackSize; //Doesn't matter if that will be negative, but avoids another if block
 
                     addedSuccessfully = true;
