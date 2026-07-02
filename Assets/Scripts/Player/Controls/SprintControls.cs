@@ -7,6 +7,7 @@ namespace Relentless.Player.Controls
 {
     [RequireComponent(typeof(MovementControls))]
     [RequireComponent(typeof(Stamina))]
+    [AddComponentMenu("Relentless/Player/Controls/Sprint Controls")]
     public class SprintControls : MonoBehaviour
     {
         private MovementControls _movementControls;

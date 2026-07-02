@@ -5,7 +5,7 @@ namespace Relentless.Inventory.Items
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(Collider2D))]
-
+    [AddComponentMenu("Relentless/Pickable/Item")]
     public class Item : MonoBehaviour, IPickable
     {
         [SerializeField] private ItemData _data;

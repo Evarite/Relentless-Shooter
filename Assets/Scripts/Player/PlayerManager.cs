@@ -2,6 +2,7 @@
 
 namespace Relentless.Player
 {
+    [AddComponentMenu("Relentless/Player/Player Manager")]
     public class PlayerManager : MonoBehaviour
     {
         //Idk, maybe it's better to do with awake and destroy but that fully depends on me

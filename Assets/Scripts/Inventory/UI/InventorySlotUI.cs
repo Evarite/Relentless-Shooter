@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Relentless.Inventory.UI
 {
+    [AddComponentMenu("Relentless/Inventory/UI/Inventory Slot UI")]
     public class InventorySlotUI : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _icon;

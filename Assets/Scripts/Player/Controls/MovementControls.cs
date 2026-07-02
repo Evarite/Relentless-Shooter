@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 namespace Relentless.Player.Controls
 {
     [RequireComponent(typeof(Rigidbody2D))]
+    [AddComponentMenu("Relentless/Player/Controls/Movement Controls")]
     public class MovementControls : MonoBehaviour
     {
         [SerializeField] private float _speed;

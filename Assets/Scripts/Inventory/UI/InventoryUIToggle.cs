@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Relentless.Inventory.UI
 {
+    [AddComponentMenu("Relentless/Inventory/UI/Inventory UI Toggle")]
     public class InventoryUIToggle : MonoBehaviour
     {
         [SerializeField] private GameObject _inventory;

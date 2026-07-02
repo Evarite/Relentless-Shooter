@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Relentless.Player.StaminaSystem
 {
+    [AddComponentMenu("Relentless/Player/Stamina System/Stamina")]
     public class Stamina : MonoBehaviour
     {
         [Header("Max Value")]

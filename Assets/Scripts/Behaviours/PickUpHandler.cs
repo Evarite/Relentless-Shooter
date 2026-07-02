@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Relentless.Behaviours
 {
     [RequireComponent(typeof(CircleCollider2D))]
+    [AddComponentMenu("Relentless/Behaviours/Pick Up Handler")]
     public class PickUpHandler : MonoBehaviour
     {
         [SerializeField] private GameObject _picker; 

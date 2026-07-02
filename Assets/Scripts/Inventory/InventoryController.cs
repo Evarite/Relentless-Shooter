@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Relentless.Inventory
 {
+    [AddComponentMenu("Relentless/Inventory/Inventory Controller")]
     public class InventoryController : MonoBehaviour
     {
         public InventoryController Instance { get; private set; }

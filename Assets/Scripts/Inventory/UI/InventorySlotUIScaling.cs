@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 namespace Relentless.Inventory
 {
     [RequireComponent(typeof(Animator))]
+    [AddComponentMenu("Relentless/Inventory/UI/Inventory Slot UI Scaling")]
     public class InventorySlotUIScaling : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         private Animator _animator;

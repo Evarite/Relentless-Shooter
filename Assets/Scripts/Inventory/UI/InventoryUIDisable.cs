@@ -3,6 +3,7 @@ using UnityEngine;
 namespace Relentless.Inventory.UI
 {
     [RequireComponent(typeof(Animator))]
+    [AddComponentMenu("Relentless/Inventory/UI/Inventory UI Disable")]
     public class InventoryUIDisable : MonoBehaviour
     {
         private Animator _animator;

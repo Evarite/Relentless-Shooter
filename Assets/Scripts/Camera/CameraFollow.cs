@@ -2,6 +2,7 @@
 
 namespace Relentless.CameraSystem
 {
+    [AddComponentMenu("Relentless/Camera/Camera Follow")]
     public class CameraFollow : MonoBehaviour
     {
         [SerializeField] private float _smoothTime = 0.2f;

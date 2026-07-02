@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Relentless
 {
+    [AddComponentMenu("Relentless/Managers/Game Manager")]
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }

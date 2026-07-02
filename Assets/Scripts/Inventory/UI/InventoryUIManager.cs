@@ -2,6 +2,7 @@
 
 namespace Relentless.Inventory.UI
 {
+    [AddComponentMenu("Relentless/Inventory/UI/Inventory UI Manager")]
     public class InventoryUIManager : MonoBehaviour
     {
         [SerializeField] private InventorySlotUI[] _inventorySlots;
