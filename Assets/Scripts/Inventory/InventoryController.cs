@@ -72,7 +72,6 @@ namespace Relentless.Inventory
                     _inventorySlots[freeIndex].ItemData = data;
                     _inventorySlots[freeIndex].Quantity = Mathf.Min(quantity, data.MaxStackSize);
 
-                    Debug.Log($"{data.Name}, {_inventorySlots[freeIndex].ItemData.Name}");
                     quantity -= data.MaxStackSize; //Doesn't matter if that will be negative, but avoids another if block
 
                     addedSuccessfully = true;

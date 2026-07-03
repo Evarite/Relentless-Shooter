@@ -4711,6 +4711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot
       objectReference: {fileID: 0}
+    - target: {fileID: 4319716920920408591, guid: 21d766300c2537f448b1137d8898408e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5702563916366594224, guid: 21d766300c2537f448b1137d8898408e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

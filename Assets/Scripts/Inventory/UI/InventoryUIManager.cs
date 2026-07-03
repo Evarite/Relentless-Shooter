@@ -9,7 +9,6 @@ namespace Relentless.Inventory.UI
 
         private void OnEnable()
         {
-            Debug.Log("Subscribing");
             InventoryController.OnInventoryChanged += RefreshUI;
         }
 
@@ -20,7 +19,6 @@ namespace Relentless.Inventory.UI
 
         private void RefreshUI()
         {
-            Debug.Log("Caught the event");
             for (int i = 0; i < _inventorySlots.Length; i++)
                 _inventorySlots[i].SetData(InventoryController.GetSlot(i));
         }
