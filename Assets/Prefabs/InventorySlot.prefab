@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7872151151857933330}
   - component: {fileID: 2476158223867559081}
   - component: {fileID: 2484044093010473092}
+  - component: {fileID: 6163364829705771647}
   m_Layer: 5
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -189,6 +190,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Inventory.UI.InventorySlotUI
   _icon: {fileID: 1998442876332468917}
   _quantityText: {fileID: 3525124425159986118}
+--- !u!114 &6163364829705771647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943163066585111184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71fd788208cd164bb910422a33d411f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Inventory.UI.Drag.InventoryItemUIReleaseHandler
+  _itemDrag: {fileID: 881921693524807287}
 --- !u!1 &3710894566891930487
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +414,7 @@ RectTransform:
   m_GameObject: {fileID: 5428387083058946693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1790574, y: 1.1790574, z: 1.1790574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5702563916366594224}
@@ -460,3 +474,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e5ca8a90550d145bac932e80f1fad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Inventory.UI.InventoryItemUIDrag
+  _draggingScale: {x: 157.6368, y: 157.6368, z: 157.6368}
+  _layerOnTop: {fileID: 0}

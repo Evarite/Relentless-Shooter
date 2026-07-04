@@ -1,4 +1,5 @@
 using Relentless.Inventory.UI;
+using Relentless.Inventory.UI.Drag;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
