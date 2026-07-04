@@ -7,20 +7,22 @@ namespace Relentless.Inventory.UI
     {
         [SerializeField] private InventorySlotUI[] _inventorySlots;
 
-        private void OnEnable()
-        {
-            InventoryController.OnInventoryChanged += RefreshUI;
-        }
+        private void OnEnable() => InventoryController.OnInventoryChanged += RefreshUI;
 
-        private void OnDisable()
-        {
-            InventoryController.OnInventoryChanged -= RefreshUI;
-        }
+        private void OnDisable() => InventoryController.OnInventoryChanged -= RefreshUI;
 
         private void RefreshUI()
         {
             for (int i = 0; i < _inventorySlots.Length; i++)
                 _inventorySlots[i].SetData(InventoryController.GetSlot(i));
+        }
+
+        public int GetSlotIndex(InventorySlotUI slot)
+        {
+            for (int i = 0; i < _inventorySlots.Length; i++)
+                if (slot == _inventorySlots[i])
+                    return i;
+            return -1;
         }
     }
 }

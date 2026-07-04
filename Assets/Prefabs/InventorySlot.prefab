@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34f296731e1e234bb9b6e9305fc1bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Inventory.InventorySlotUIScaling
+  _itemDrag: {fileID: 881921693524807287}
 --- !u!222 &7872151151857933330
 CanvasRenderer:
   m_ObjectHideFlags: 0
