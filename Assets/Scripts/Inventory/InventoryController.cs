@@ -83,6 +83,13 @@ namespace Relentless.Inventory
             return addedSuccessfully;
         }
 
+        public static void RemoveItem(int index)
+        {
+            _inventorySlots[index].ItemData = null;
+            _inventorySlots[index].Quantity = 0;
+            OnInventoryChanged?.Invoke();
+        }
+
         public static InventorySlot GetSlot(int index) => _inventorySlots[index];
     }
 }

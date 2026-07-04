@@ -13,7 +13,6 @@ namespace Relentless.Inventory.UI.Drag
         private Vector2 _clickOffset;
 
         [SerializeField] private Vector3 _draggingScale;
-        [SerializeField] private Transform _layerOnTop;
 
         private Quaternion _originalRotation = Quaternion.identity;
         private Vector3 _origninalScale = Vector3.one;
@@ -58,7 +57,7 @@ namespace Relentless.Inventory.UI.Drag
 
             _clickOffset = _rectTransform.anchoredPosition - localPoint;
 
-            transform.SetParent(_layerOnTop, true);
+            transform.SetParent(InventoryUITopLayer.GetTopLayer(), true);
             transform.localScale = _draggingScale;
 
             //ItemTaken?.Invoke(CurrentSlot, eventData);
