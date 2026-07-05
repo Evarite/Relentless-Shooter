@@ -20,7 +20,9 @@ namespace Relentless.Inventory.UI.Drag
 
         private void OnDisable() => _releaseHandler.OnItemDrop -= DropItem;
 
-        private void DropItem() =>
+        private void DropItem()
+        {
             InventoryController.RemoveItem(InventoryUIManager.GetSlotIndex(_slot));
+        }
     }
 }

@@ -11,12 +11,8 @@ namespace Relentless.Inventory.UI.Drag
     {
         [SerializeField] private InventoryItemUIDrag _itemDrag;
 
-        private InventorySlotUI _slot;
-
         public event Action<InventorySlotUI> OnChangeSlot;
         public event Action OnItemDrop;
-
-        private void Awake() => _slot = GetComponent<InventorySlotUI>();
 
         private void OnEnable()
         {
@@ -40,13 +36,11 @@ namespace Relentless.Inventory.UI.Drag
                 targetSlot = result.gameObject.GetComponent<InventorySlotUI>();
                 if (targetSlot != null)
                 {
-                    Debug.Log("Slot detected!");
-                    OnChangeSlot?.Invoke(_slot);
+                    OnChangeSlot?.Invoke(targetSlot);
                     return;
                 }
             }
              
-            Debug.Log("No slot detected");
             OnItemDrop?.Invoke();
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace Relentless.Inventory.UI.Drag
 {
+    [RequireComponent(typeof(CanvasGroup))]
     [AddComponentMenu("Relentless/Inventory/UI/Item Drag/Inventory Item UI Drag")]
     public class InventoryItemUIDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
@@ -19,6 +20,8 @@ namespace Relentless.Inventory.UI.Drag
         private Vector3 _originalPosition = Vector3.zero; //The position inside the parent object
         private Transform _originalParent;
 
+        private CanvasGroup _canvasGroup;
+
         //public event Action<InventorySlotUI, PointerEventData> ItemTaken;
         //public event Action<InventorySlotUI, PointerEventData> ItemReleased;
         public event Action<PointerEventData> ItemTaken;
@@ -30,6 +33,8 @@ namespace Relentless.Inventory.UI.Drag
             _rectTransform = GetComponent<RectTransform>();
 
             _originalParent = transform.parent;
+
+            _canvasGroup = GetComponent<CanvasGroup>();
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -47,6 +52,8 @@ namespace Relentless.Inventory.UI.Drag
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            _canvasGroup.blocksRaycasts = false;
+
             Vector2 localPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 _rectTransform.parent as RectTransform,
@@ -67,6 +74,8 @@ namespace Relentless.Inventory.UI.Drag
         //public void OnEndDrag(PointerEventData eventData) => ItemReleased?.Invoke(CurrentSlot, eventData);
         public void OnEndDrag(PointerEventData eventData)
         {
+            _canvasGroup.blocksRaycasts = true;
+
             transform.localScale = _origninalScale;
 
             transform.SetParent(_originalParent, false);

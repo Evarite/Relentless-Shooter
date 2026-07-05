@@ -27,41 +27,41 @@ namespace Relentless.Inventory
                 _inventorySlots.Add(new InventorySlot(null, 0));
         }
 
-        public static void AddItem(ItemData newItem, int quantity = 1)
+        public static void AddItem(ItemData newItem, int count = 1)
         {
             int index = _inventorySlots.FindIndex(slot =>
             slot.ItemData != null &&
             slot.ItemData.IsStackable &&
-            slot.Quantity != slot.ItemData.MaxStackSize &&
+            slot.Count != slot.ItemData.MaxStackSize &&
             slot.ItemData == newItem);
 
             if (index != -1)
             {
                 InventorySlot occupiedSlot = _inventorySlots[index];
 
-                int spaceLeft = occupiedSlot.ItemData.MaxStackSize - occupiedSlot.Quantity;
-                int amountToAdd = Mathf.Min(spaceLeft, quantity);
+                int spaceLeft = occupiedSlot.ItemData.MaxStackSize - occupiedSlot.Count;
+                int amountToAdd = Mathf.Min(spaceLeft, count);
 
-                occupiedSlot.Quantity += amountToAdd;
-                quantity -= amountToAdd;
+                occupiedSlot.Count += amountToAdd;
+                count -= amountToAdd;
 
-                if (quantity > 0)
-                    AddToFreeSlot(newItem, quantity);
+                if (count > 0)
+                    AddToFreeSlot(newItem, count);
             }
             else
             {
-                if (!AddToFreeSlot(newItem, quantity))
+                if (!AddToFreeSlot(newItem, count))
                     return;
             }
 
             OnInventoryChanged?.Invoke();
         }
 
-        private static bool AddToFreeSlot(ItemData data, int quantity)
+        private static bool AddToFreeSlot(ItemData data, int count)
         {
             bool addedSuccessfully = false;
 
-            while (quantity > 0)
+            while (count > 0)
             {
                 int freeIndex = _inventorySlots.FindIndex(slot => slot.ItemData == null);
 
@@ -70,9 +70,9 @@ namespace Relentless.Inventory
                     //_inventorySlots[freeIndex] = new InventorySlot(data,
                     //    Mathf.Min(quantity, data.MaxStackSize));
                     _inventorySlots[freeIndex].ItemData = data;
-                    _inventorySlots[freeIndex].Quantity = Mathf.Min(quantity, data.MaxStackSize);
+                    _inventorySlots[freeIndex].Count = Mathf.Min(count, data.MaxStackSize);
 
-                    quantity -= data.MaxStackSize; //Doesn't matter if that will be negative, but avoids another if block
+                    count -= data.MaxStackSize; //Doesn't matter if that will be negative, but avoids another if block
 
                     addedSuccessfully = true;
                 }
@@ -86,7 +86,28 @@ namespace Relentless.Inventory
         public static void RemoveItem(int index)
         {
             _inventorySlots[index].ItemData = null;
-            _inventorySlots[index].Quantity = 0;
+            _inventorySlots[index].Count = 0;
+
+            OnInventoryChanged?.Invoke();
+        }
+
+        public static void ChangeSlot(int oldSlot, int newSlot)
+        {
+            if (_inventorySlots[newSlot].ItemData == null)
+            {
+                (_inventorySlots[oldSlot], _inventorySlots[newSlot]) =
+                    (_inventorySlots[newSlot], _inventorySlots[oldSlot]);
+            }
+            else if (_inventorySlots[newSlot].ItemData == _inventorySlots[oldSlot].ItemData &&
+                _inventorySlots[newSlot].Count != _inventorySlots[newSlot].ItemData.MaxStackSize &&
+                _inventorySlots[oldSlot].Count != _inventorySlots[oldSlot].ItemData.MaxStackSize)
+            { 
+
+            }
+            else
+                (_inventorySlots[oldSlot], _inventorySlots[newSlot]) =
+                    (_inventorySlots[newSlot], _inventorySlots[oldSlot]);
+
             OnInventoryChanged?.Invoke();
         }
 

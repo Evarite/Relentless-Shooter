@@ -8,7 +8,7 @@ namespace Relentless.Inventory.UI
     public class InventorySlotUI : MonoBehaviour
     {
         [SerializeField] private Image _icon;
-        [SerializeField] private TextMeshPro _quantityText;
+        [SerializeField] private TextMeshPro _countText;
 
         public void SetData(InventorySlot data)
         {
@@ -16,13 +16,13 @@ namespace Relentless.Inventory.UI
             {
                 _icon.sprite = null;
                 _icon.enabled = false;
-                _quantityText.text = string.Empty;
+                _countText.text = string.Empty;
                 return;
             }
 
             _icon.enabled = true;
             _icon.sprite = data.ItemData.Icon;
-            _quantityText.text = data.Quantity.ToString();
+            _countText.text = data.Count.ToString();
         }
     }
 }

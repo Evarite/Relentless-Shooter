@@ -1,8 +1,7 @@
-﻿using Relentless.Inventory;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
-namespace Assets.Scripts.Inventory.UI.Items
+namespace Relentless.Inventory.Items
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(Collider2D))]
@@ -11,7 +10,7 @@ namespace Assets.Scripts.Inventory.UI.Items
     {
         [SerializeField] private ItemData _data;
         //If an enemy drops multiple same objects as a reward
-        public int Quantity { private get; set; } = 1;
+        public int Count { private get; set; } = 1;
 
         private bool _isPickedUp = false;
 
@@ -22,7 +21,7 @@ namespace Assets.Scripts.Inventory.UI.Items
 
             _isPickedUp = true;
 
-            InventoryController.AddItem(_data, Quantity);
+            InventoryController.AddItem(_data, Count);
             Destroy(gameObject);
         }
     }
