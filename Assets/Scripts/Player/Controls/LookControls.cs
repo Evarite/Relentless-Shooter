@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Relentless.Player.Controls
 {
+    [AddComponentMenu("Relentless/Player/Controls/Look Controls")]
     public class LookControls : MonoBehaviour
     {
         [Header("Camera script")]

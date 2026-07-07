@@ -5,6 +5,7 @@ using UnityEngine.UI;
 namespace Relentless.Player.HealthSystem
 {
     [RequireComponent(typeof(Slider))]
+    [AddComponentMenu("Relentless/Player/UI/Health UI Bar")]
 
     public class HealthUIBar : MonoBehaviour
     {

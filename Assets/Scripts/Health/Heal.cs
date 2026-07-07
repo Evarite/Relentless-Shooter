@@ -3,6 +3,7 @@
 namespace Relentless.HealthSystem
 {
     [RequireComponent(typeof(Health))]
+    [AddComponentMenu("Relentless/Health/Heal")]
     public class Heal : MonoBehaviour
     {
         [SerializeField] private float _healValue;

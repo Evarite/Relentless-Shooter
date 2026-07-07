@@ -4,6 +4,7 @@ using UnityEngine.UI;
 namespace Relentless.Player.StaminaSystem
 {
     [RequireComponent(typeof(Slider))]
+    [AddComponentMenu("Relentless/Player/Stamina System/Stamina UI Bar")]
     public class StaminaUIBar : MonoBehaviour
     {
         private Slider _slider;

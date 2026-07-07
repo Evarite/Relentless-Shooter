@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Relentless.Player.Controls
 {
+    [AddComponentMenu("Relentless/Player/Controls/Attack Controls")]
     public class AttackControls : MonoBehaviour
     {
         //TODO

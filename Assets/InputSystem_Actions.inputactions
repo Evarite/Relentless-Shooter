@@ -50,6 +50,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "OpenInventory",
+                    "type": "Button",
+                    "id": "55c229fd-7212-41c1-bd52-5418ea01adf4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "OpenPause",
+                    "type": "Button",
+                    "id": "4e0b2e51-c061-4bc3-9118-fd1a5cc97ebe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -206,36 +224,10 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Global",
-            "id": "35354a7b-b347-4f19-b535-0a000431be11",
-            "actions": [
-                {
-                    "name": "OpenInventory",
-                    "type": "Button",
-                    "id": "6bba546e-128d-4f66-b087-3e91bc1d1e32",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
-                    "name": "OpenPause",
-                    "type": "Button",
-                    "id": "3fae9719-0dbb-436b-bf15-5d23c4a71980",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
                     "name": "",
-                    "id": "58f24f67-c992-4fb3-970f-1f81cccb74b4",
+                    "id": "3aa8d9d2-2f53-4705-8b55-f3822df8d4a3",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
@@ -246,7 +238,18 @@
                 },
                 {
                     "name": "",
-                    "id": "77b3ae34-5021-4f4f-9bbe-ef04999aba9e",
+                    "id": "cb5c31b6-b90f-4a69-b019-406e0f7408b5",
+                    "path": "<DualShockGamepad>/touchpadButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a765004b-900f-4294-85fb-fdb2cfa6b825",
                     "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
@@ -257,8 +260,8 @@
                 },
                 {
                     "name": "",
-                    "id": "b7b84628-6603-44b6-8912-f8338e03cd80",
-                    "path": "<Keyboard>/escape",
+                    "id": "c0400c71-67a6-42af-95f9-1c51c5f15994",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -268,8 +271,8 @@
                 },
                 {
                     "name": "",
-                    "id": "935ebb1c-4450-4e16-80ef-cde5f7cce101",
-                    "path": "<Gamepad>/start",
+                    "id": "b7a3eea8-46cc-4a9f-b974-49471bcb83d6",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -284,7 +287,7 @@
             "id": "e1874885-671f-49e2-91c4-b67aba3fd7e7",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "CloseInventory",
                     "type": "Button",
                     "id": "f1b7015f-e2c7-4001-844d-74e07e2cf663",
                     "expectedControlType": "",
@@ -297,11 +300,22 @@
                 {
                     "name": "",
                     "id": "2e16b751-aaa8-46a3-902c-a5611c08d672",
-                    "path": "",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "CloseInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21de14b5-ca4e-4563-b755-cfe375e6e496",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -312,7 +326,7 @@
             "id": "087807bd-2a76-4841-9624-d5f719e35acc",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "ClosePause",
                     "type": "Button",
                     "id": "9fd2daee-3da3-4f8c-91fe-95aa5575cf28",
                     "expectedControlType": "",
@@ -325,11 +339,22 @@
                 {
                     "name": "",
                     "id": "54c5509d-e239-46ce-9c16-a54ba67dda6a",
-                    "path": "",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "ClosePause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c264363b-f90f-4814-9bdd-ad8c3ef4d38f",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClosePause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

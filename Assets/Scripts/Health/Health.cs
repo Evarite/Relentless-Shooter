@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Relentless.HealthSystem
 {
+    [AddComponentMenu("Relentless/Health/Health")]
     public class Health : MonoBehaviour, IHittable
     {
         [SerializeField] private float _maxHealth;

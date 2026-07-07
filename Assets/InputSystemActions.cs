@@ -136,6 +136,24 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""55c229fd-7212-41c1-bd52-5418ea01adf4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenPause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e0b2e51-c061-4bc3-9118-fd1a5cc97ebe"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -292,36 +310,10 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Global"",
-            ""id"": ""35354a7b-b347-4f19-b535-0a000431be11"",
-            ""actions"": [
-                {
-                    ""name"": ""OpenInventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""6bba546e-128d-4f66-b087-3e91bc1d1e32"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""OpenPause"",
-                    ""type"": ""Button"",
-                    ""id"": ""3fae9719-0dbb-436b-bf15-5d23c4a71980"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
                     ""name"": """",
-                    ""id"": ""58f24f67-c992-4fb3-970f-1f81cccb74b4"",
+                    ""id"": ""3aa8d9d2-2f53-4705-8b55-f3822df8d4a3"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -332,7 +324,18 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""77b3ae34-5021-4f4f-9bbe-ef04999aba9e"",
+                    ""id"": ""cb5c31b6-b90f-4a69-b019-406e0f7408b5"",
+                    ""path"": ""<DualShockGamepad>/touchpadButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a765004b-900f-4294-85fb-fdb2cfa6b825"",
                     ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -343,8 +346,8 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b7b84628-6603-44b6-8912-f8338e03cd80"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""c0400c71-67a6-42af-95f9-1c51c5f15994"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -354,8 +357,8 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""935ebb1c-4450-4e16-80ef-cde5f7cce101"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""id"": ""b7a3eea8-46cc-4a9f-b974-49471bcb83d6"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -370,7 +373,7 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
             ""id"": ""e1874885-671f-49e2-91c4-b67aba3fd7e7"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""CloseInventory"",
                     ""type"": ""Button"",
                     ""id"": ""f1b7015f-e2c7-4001-844d-74e07e2cf663"",
                     ""expectedControlType"": """",
@@ -383,11 +386,22 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2e16b751-aaa8-46a3-902c-a5611c08d672"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""CloseInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21de14b5-ca4e-4563-b755-cfe375e6e496"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -398,7 +412,7 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
             ""id"": ""087807bd-2a76-4841-9624-d5f719e35acc"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""ClosePause"",
                     ""type"": ""Button"",
                     ""id"": ""9fd2daee-3da3-4f8c-91fe-95aa5575cf28"",
                     ""expectedControlType"": """",
@@ -411,11 +425,22 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""54c5509d-e239-46ce-9c16-a54ba67dda6a"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""ClosePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c264363b-f90f-4814-9bdd-ad8c3ef4d38f"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ClosePause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -492,22 +517,19 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
-        // Global
-        m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
-        m_Global_OpenInventory = m_Global.FindAction("OpenInventory", throwIfNotFound: true);
-        m_Global_OpenPause = m_Global.FindAction("OpenPause", throwIfNotFound: true);
+        m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
+        m_Player_OpenPause = m_Player.FindAction("OpenPause", throwIfNotFound: true);
         // Inventory
         m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
-        m_Inventory_Newaction = m_Inventory.FindAction("New action", throwIfNotFound: true);
+        m_Inventory_CloseInventory = m_Inventory.FindAction("CloseInventory", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
-        m_Pause_Newaction = m_Pause.FindAction("New action", throwIfNotFound: true);
+        m_Pause_ClosePause = m_Pause.FindAction("ClosePause", throwIfNotFound: true);
     }
 
     ~@InputSystemActions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystemActions.Player.Disable() has not been called.");
-        UnityEngine.Debug.Assert(!m_Global.enabled, "This will cause a leak and performance issues, InputSystemActions.Global.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Inventory.enabled, "This will cause a leak and performance issues, InputSystemActions.Inventory.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Pause.enabled, "This will cause a leak and performance issues, InputSystemActions.Pause.Disable() has not been called.");
     }
@@ -590,6 +612,8 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_OpenInventory;
+    private readonly InputAction m_Player_OpenPause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -621,6 +645,14 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Sprint".
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/OpenInventory".
+        /// </summary>
+        public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/OpenPause".
+        /// </summary>
+        public InputAction @OpenPause => m_Wrapper.m_Player_OpenPause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -662,6 +694,12 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @OpenInventory.started += instance.OnOpenInventory;
+            @OpenInventory.performed += instance.OnOpenInventory;
+            @OpenInventory.canceled += instance.OnOpenInventory;
+            @OpenPause.started += instance.OnOpenPause;
+            @OpenPause.performed += instance.OnOpenPause;
+            @OpenPause.canceled += instance.OnOpenPause;
         }
 
         /// <summary>
@@ -688,6 +726,12 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @OpenInventory.started -= instance.OnOpenInventory;
+            @OpenInventory.performed -= instance.OnOpenInventory;
+            @OpenInventory.canceled -= instance.OnOpenInventory;
+            @OpenPause.started -= instance.OnOpenPause;
+            @OpenPause.performed -= instance.OnOpenPause;
+            @OpenPause.canceled -= instance.OnOpenPause;
         }
 
         /// <summary>
@@ -722,117 +766,10 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
     /// </summary>
     public PlayerActions @Player => new PlayerActions(this);
 
-    // Global
-    private readonly InputActionMap m_Global;
-    private List<IGlobalActions> m_GlobalActionsCallbackInterfaces = new List<IGlobalActions>();
-    private readonly InputAction m_Global_OpenInventory;
-    private readonly InputAction m_Global_OpenPause;
-    /// <summary>
-    /// Provides access to input actions defined in input action map "Global".
-    /// </summary>
-    public struct GlobalActions
-    {
-        private @InputSystemActions m_Wrapper;
-
-        /// <summary>
-        /// Construct a new instance of the input action map wrapper class.
-        /// </summary>
-        public GlobalActions(@InputSystemActions wrapper) { m_Wrapper = wrapper; }
-        /// <summary>
-        /// Provides access to the underlying input action "Global/OpenInventory".
-        /// </summary>
-        public InputAction @OpenInventory => m_Wrapper.m_Global_OpenInventory;
-        /// <summary>
-        /// Provides access to the underlying input action "Global/OpenPause".
-        /// </summary>
-        public InputAction @OpenPause => m_Wrapper.m_Global_OpenPause;
-        /// <summary>
-        /// Provides access to the underlying input action map instance.
-        /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Global; }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
-        public void Enable() { Get().Enable(); }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
-        public void Disable() { Get().Disable(); }
-        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
-        public bool enabled => Get().enabled;
-        /// <summary>
-        /// Implicitly converts an <see ref="GlobalActions" /> to an <see ref="InputActionMap" /> instance.
-        /// </summary>
-        public static implicit operator InputActionMap(GlobalActions set) { return set.Get(); }
-        /// <summary>
-        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-        /// </summary>
-        /// <param name="instance">Callback instance.</param>
-        /// <remarks>
-        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
-        /// </remarks>
-        /// <seealso cref="GlobalActions" />
-        public void AddCallbacks(IGlobalActions instance)
-        {
-            if (instance == null || m_Wrapper.m_GlobalActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GlobalActionsCallbackInterfaces.Add(instance);
-            @OpenInventory.started += instance.OnOpenInventory;
-            @OpenInventory.performed += instance.OnOpenInventory;
-            @OpenInventory.canceled += instance.OnOpenInventory;
-            @OpenPause.started += instance.OnOpenPause;
-            @OpenPause.performed += instance.OnOpenPause;
-            @OpenPause.canceled += instance.OnOpenPause;
-        }
-
-        /// <summary>
-        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
-        /// </summary>
-        /// <remarks>
-        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
-        /// </remarks>
-        /// <seealso cref="GlobalActions" />
-        private void UnregisterCallbacks(IGlobalActions instance)
-        {
-            @OpenInventory.started -= instance.OnOpenInventory;
-            @OpenInventory.performed -= instance.OnOpenInventory;
-            @OpenInventory.canceled -= instance.OnOpenInventory;
-            @OpenPause.started -= instance.OnOpenPause;
-            @OpenPause.performed -= instance.OnOpenPause;
-            @OpenPause.canceled -= instance.OnOpenPause;
-        }
-
-        /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="GlobalActions.UnregisterCallbacks(IGlobalActions)" />.
-        /// </summary>
-        /// <seealso cref="GlobalActions.UnregisterCallbacks(IGlobalActions)" />
-        public void RemoveCallbacks(IGlobalActions instance)
-        {
-            if (m_Wrapper.m_GlobalActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        /// <summary>
-        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
-        /// </summary>
-        /// <remarks>
-        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
-        /// </remarks>
-        /// <seealso cref="GlobalActions.AddCallbacks(IGlobalActions)" />
-        /// <seealso cref="GlobalActions.RemoveCallbacks(IGlobalActions)" />
-        /// <seealso cref="GlobalActions.UnregisterCallbacks(IGlobalActions)" />
-        public void SetCallbacks(IGlobalActions instance)
-        {
-            foreach (var item in m_Wrapper.m_GlobalActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_GlobalActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    /// <summary>
-    /// Provides a new <see cref="GlobalActions" /> instance referencing this action map.
-    /// </summary>
-    public GlobalActions @Global => new GlobalActions(this);
-
     // Inventory
     private readonly InputActionMap m_Inventory;
     private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
-    private readonly InputAction m_Inventory_Newaction;
+    private readonly InputAction m_Inventory_CloseInventory;
     /// <summary>
     /// Provides access to input actions defined in input action map "Inventory".
     /// </summary>
@@ -845,9 +782,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InventoryActions(@InputSystemActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Inventory/Newaction".
+        /// Provides access to the underlying input action "Inventory/CloseInventory".
         /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_Inventory_Newaction;
+        public InputAction @CloseInventory => m_Wrapper.m_Inventory_CloseInventory;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -874,9 +811,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_InventoryActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_InventoryActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @CloseInventory.started += instance.OnCloseInventory;
+            @CloseInventory.performed += instance.OnCloseInventory;
+            @CloseInventory.canceled += instance.OnCloseInventory;
         }
 
         /// <summary>
@@ -888,9 +825,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// <seealso cref="InventoryActions" />
         private void UnregisterCallbacks(IInventoryActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @CloseInventory.started -= instance.OnCloseInventory;
+            @CloseInventory.performed -= instance.OnCloseInventory;
+            @CloseInventory.canceled -= instance.OnCloseInventory;
         }
 
         /// <summary>
@@ -928,7 +865,7 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
     // Pause
     private readonly InputActionMap m_Pause;
     private List<IPauseActions> m_PauseActionsCallbackInterfaces = new List<IPauseActions>();
-    private readonly InputAction m_Pause_Newaction;
+    private readonly InputAction m_Pause_ClosePause;
     /// <summary>
     /// Provides access to input actions defined in input action map "Pause".
     /// </summary>
@@ -941,9 +878,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// </summary>
         public PauseActions(@InputSystemActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Pause/Newaction".
+        /// Provides access to the underlying input action "Pause/ClosePause".
         /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_Pause_Newaction;
+        public InputAction @ClosePause => m_Wrapper.m_Pause_ClosePause;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -970,9 +907,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PauseActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PauseActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @ClosePause.started += instance.OnClosePause;
+            @ClosePause.performed += instance.OnClosePause;
+            @ClosePause.canceled += instance.OnClosePause;
         }
 
         /// <summary>
@@ -984,9 +921,9 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// <seealso cref="PauseActions" />
         private void UnregisterCallbacks(IPauseActions instance)
         {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @ClosePause.started -= instance.OnClosePause;
+            @ClosePause.performed -= instance.OnClosePause;
+            @ClosePause.canceled -= instance.OnClosePause;
         }
 
         /// <summary>
@@ -1127,14 +1064,6 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
-    }
-    /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Global" which allows adding and removing callbacks.
-    /// </summary>
-    /// <seealso cref="GlobalActions.AddCallbacks(IGlobalActions)" />
-    /// <seealso cref="GlobalActions.RemoveCallbacks(IGlobalActions)" />
-    public interface IGlobalActions
-    {
         /// <summary>
         /// Method invoked when associated input action "OpenInventory" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -1158,12 +1087,12 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
     public interface IInventoryActions
     {
         /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "CloseInventory" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnCloseInventory(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Pause" which allows adding and removing callbacks.
@@ -1173,11 +1102,11 @@ public partial class @InputSystemActions: IInputActionCollection2, IDisposable
     public interface IPauseActions
     {
         /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "ClosePause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnClosePause(InputAction.CallbackContext context);
     }
 }

@@ -1,12 +1,14 @@
+using Relentless.Inventory;
+using System;
 using UnityEngine;
 
 namespace Relentless
 {
+    [AddComponentMenu("Relentless/Managers/Game Manager")]
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
         public static InputSystemActions InputActions { get; private set; }
-
         public static GameObject Player { get; private set; }
 
         private void Awake()
@@ -19,18 +21,7 @@ namespace Relentless
             Instance = this;
 
             InputActions = new InputSystemActions();
-            InputActions.Global.Enable();
             ActivatePlayer();
-        }
-
-        private void OnEnable()
-        {
-            //Subscribe to the switching aciton maps events (in another branch)
-        }
-
-        private void OnDisable()
-        {
-            //Unsibscribe
         }
 
         private void OnDestroy()
@@ -41,21 +32,21 @@ namespace Relentless
         public static void RegisterPlayer(GameObject player) => Player = player;
         public static void UnregisterPlayer() => Player = null;
 
-        private void ActivatePlayer()
+        public static void ActivatePlayer()
         {
             InputActions.Player.Enable();
             InputActions.Inventory.Disable();
             InputActions.Pause.Disable();
         }
 
-        private void ActivateInventory()
+        public static void ActivateInventory()
         {
             InputActions.Player.Disable();
             InputActions.Inventory.Enable();
             InputActions.Pause.Disable();
         }
 
-        private void ActivatePause()
+        public static void ActivatePause()
         {
             InputActions.Player.Disable();
             InputActions.Inventory.Disable();

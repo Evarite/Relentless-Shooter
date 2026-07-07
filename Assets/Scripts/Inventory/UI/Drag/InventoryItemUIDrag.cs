@@ -1,0 +1,88 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+namespace Relentless.Inventory.UI.Drag
+{
+    [RequireComponent(typeof(CanvasGroup))]
+    [AddComponentMenu("Relentless/Inventory/UI/Item Drag/Inventory Item UI Drag")]
+    public class InventoryItemUIDrag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+    {
+        //[field: SerializeField] public InventorySlotUI CurrentSlot { private get; set; }
+
+        private RectTransform _rectTransform;
+        private Vector2 _clickOffset;
+
+        [SerializeField] private Vector3 _draggingScale;
+
+        private Quaternion _originalRotation = Quaternion.identity;
+        private Vector3 _origninalScale = Vector3.one;
+        private Vector3 _originalPosition = Vector3.zero; //The position inside the parent object
+        private Transform _originalParent;
+
+        private CanvasGroup _canvasGroup;
+
+        //public event Action<InventorySlotUI, PointerEventData> ItemTaken;
+        //public event Action<InventorySlotUI, PointerEventData> ItemReleased;
+        public event Action<PointerEventData> ItemTaken;
+        public event Action<PointerEventData> ItemReleased;
+
+        //Item is not transfered to another slot, the sprites are changed only
+        private void Awake()
+        {
+            _rectTransform = GetComponent<RectTransform>();
+
+            _originalParent = transform.parent;
+
+            _canvasGroup = GetComponent<CanvasGroup>();
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            Vector2 localPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _rectTransform.parent as RectTransform,
+                eventData.position,
+                eventData.pressEventCamera,
+                out localPoint
+                );
+
+            _rectTransform.anchoredPosition = localPoint + _clickOffset;
+        }
+
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            _canvasGroup.blocksRaycasts = false;
+
+            Vector2 localPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _rectTransform.parent as RectTransform,
+                eventData.position,
+                eventData.pressEventCamera,
+                out localPoint
+                );
+
+            _clickOffset = _rectTransform.anchoredPosition - localPoint;
+
+            transform.SetParent(InventoryUITopLayer.GetTopLayer(), true);
+            transform.localScale = _draggingScale;
+
+            //ItemTaken?.Invoke(CurrentSlot, eventData);
+            ItemTaken?.Invoke(eventData);
+        }
+
+        //public void OnEndDrag(PointerEventData eventData) => ItemReleased?.Invoke(CurrentSlot, eventData);
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            _canvasGroup.blocksRaycasts = true;
+
+            transform.localScale = _origninalScale;
+
+            transform.SetParent(_originalParent, false);
+            _rectTransform.anchoredPosition3D = _originalPosition;
+            transform.rotation = _originalRotation;
+
+            ItemReleased?.Invoke(eventData);
+        }
+    }
+}
