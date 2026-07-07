@@ -23,28 +23,42 @@ namespace Relentless.Inventory.Items
             Instance = this;
         }
 
-        private void SpawnDroppedItem(GameObject prefab)
+        //TODO
+        //Implement pooling and change resources' prefabs into one that is dynamically set up to avoid instantiating
+        public static void SpawnDroppedItem(GameObject prefab, int count)
         {
-            Vector2 direction = UnityEngine.Random.insideUnitCircle.normalized;
-            Vector2 spawnPosition = (Vector2)GameManager.Player.transform.position + direction *
-                _dropSettings.SpawnDistance; //Player can't be null now
-            Quaternion spawnRotation = Quaternion.Euler(0, 0,
-                UnityEngine.Random.Range(_dropSettings.MinSpawnAngle, _dropSettings.MaxSpawnAngle)
-                );
+            var dropSettings = Instance._dropSettings;
 
-            GameObject spawnedItem = Instantiate(prefab, spawnPosition, spawnRotation);
+            while (count > 0)
+            {
+                Vector2 direction = UnityEngine.Random.insideUnitCircle.normalized;
+                Vector2 spawnPosition = (Vector2)GameManager.Player.transform.position + 
+                    direction * dropSettings.SpawnDistance; //Player can't be null now
+                Quaternion spawnRotation = Quaternion.Euler(0, 0,
+                    UnityEngine.Random.Range(dropSettings.MinSpawnAngle, dropSettings.MaxSpawnAngle)
+                    );
 
-            RegisterDrop(spawnedItem.transform,
-                UnityEngine.Random.Range(_dropSettings.MinDistance, _dropSettings.MaxDistance) *
-                _dropSettings.Friction * direction,
-                UnityEngine.Random.Range(_dropSettings.MinRotSpeed, _dropSettings.MaxRotSpeed),
-                null);
+                GameObject spawnedItem = Instantiate(prefab, spawnPosition, spawnRotation);
+                Item item = spawnedItem.GetComponent<Item>(); //This component is obliged, can't be null
+
+                int randomCount = UnityEngine.Random.Range(dropSettings.MinStackCount, dropSettings.MaxStackCount);
+
+                item.Count = Mathf.Min(count, randomCount);
+
+                count -= randomCount;
+
+                RegisterDrop(spawnedItem.transform,
+                    UnityEngine.Random.Range(dropSettings.MinDistance, dropSettings.MaxDistance) *
+                    dropSettings.Friction * direction,
+                    UnityEngine.Random.Range(dropSettings.MinRotSpeed, dropSettings.MaxRotSpeed),
+                    null);
+            }
         }
 
-        private void RegisterDrop(Transform transform, Vector2 velocity, float angularVelocity,
+        private static void RegisterDrop(Transform transform, Vector2 velocity, float angularVelocity,
                 Action onDropComplete)
         {
-            _activeDrops.Add(new DropData(transform, velocity, angularVelocity, onDropComplete));
+            Instance._activeDrops.Add(new DropData(transform, velocity, angularVelocity, onDropComplete));
         }
 
         private void Update()

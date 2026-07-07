@@ -67,8 +67,6 @@ namespace Relentless.Inventory
 
                 if (freeIndex != -1)
                 {
-                    //_inventorySlots[freeIndex] = new InventorySlot(data,
-                    //    Mathf.Min(quantity, data.MaxStackSize));
                     _inventorySlots[freeIndex].ItemData = data;
                     _inventorySlots[freeIndex].Count = Mathf.Min(count, data.MaxStackSize);
 

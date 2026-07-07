@@ -33,5 +33,11 @@ namespace Relentless.Inventory.Items
         [field: Header("Spawn Distance")]
         [field: Tooltip("How far away from the player the object will be spawned")]
         [field: SerializeField] public float SpawnDistance { get; set; } = 2f;
+
+        [field: Header("Item Stacking")]
+        [field: Tooltip("Min count of an item, united into a single dropped prefab")]
+        [field: SerializeField] public int MinStackCount { get; set; } = 4;
+        [field: Tooltip("Max count of an item, united into a single dropped prefab")]
+        [field: SerializeField] public int MaxStackCount { get; set; } = 10;
     }
 }

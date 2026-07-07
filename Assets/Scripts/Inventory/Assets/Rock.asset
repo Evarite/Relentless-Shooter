@@ -16,3 +16,4 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 3452003437791708593, guid: 065254a2f59855c4daaa18fe6f889f5a, type: 3}
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 99
+  <Prefab>k__BackingField: {fileID: 6283920094740740905, guid: b676a2d037c6d48449cccf8af53b4f83, type: 3}
