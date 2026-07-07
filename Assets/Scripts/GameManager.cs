@@ -1,5 +1,3 @@
-using Relentless.Inventory;
-using System;
 using UnityEngine;
 
 namespace Relentless
