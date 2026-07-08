@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Relentless.Enemies.Base
 {
-    [CreateAssetMenu(menuName = "Relentless/Enemy Data", fileName = "New Enemy")]
+    [CreateAssetMenu(menuName = "Relentless/Enemies/Enemy Data", fileName = "New Enemy")]
     public class EnemyData : ScriptableObject
     {
         [Header("Attack")]

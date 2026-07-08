@@ -7,6 +7,6 @@ namespace Relentless.Enemies.Base
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private EnemyData _enemyData;
-        public EnemyData EnemyData { get => _enemyData;}
+        public EnemyData Data { get => _enemyData;}
     }
 }

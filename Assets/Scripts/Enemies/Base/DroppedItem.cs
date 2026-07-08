@@ -6,10 +6,10 @@ namespace Relentless.Enemies.Base
     [System.Serializable]
     public class DroppedItem
     {
-        public ItemData Data { get; private set; }
+        [field: SerializeField] public ItemData Data { get; private set; }
         [Range(0.001f, 1f)]
-        [SerializeField] private float _probability;
 
+        [SerializeField] private float _probability;
         public float Probability { get => _probability; set => _probability = value; }
 
         public DroppedItem(ItemData Data, float Probability)

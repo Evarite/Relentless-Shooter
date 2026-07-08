@@ -856,6 +856,7 @@ GameObject:
   - component: {fileID: 467024075}
   - component: {fileID: 467024074}
   - component: {fileID: 467024073}
+  - component: {fileID: 467024076}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -961,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb17187f8a07a6b4b9c75acb7043dbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.Enemy
-  _enemyData: {fileID: 0}
+  _enemyData: {fileID: 11400000, guid: 8d233255403c0884eb790aa0fdec62db, type: 2}
 --- !u!114 &467024075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +976,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.HealthSystem.Health
   _maxHealth: 50
+--- !u!114 &467024076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467024070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef96c4d280a1c14b935a62c91d5bc10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyDeathHandler
 --- !u!1 &572245784
 GameObject:
   m_ObjectHideFlags: 0
