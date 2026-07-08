@@ -6,9 +6,6 @@ namespace Relentless.Enemies.Base
     [CreateAssetMenu(menuName = "Relentless/Enemy Data", fileName = "New Enemy")]
     public class EnemyData : ScriptableObject
     {
-        [Header("Sprite")]
-        [SerializeField] private Sprite _sprite;
-
         [Header("Attack")]
         [SerializeField] private float _damage = 10f;
         [SerializeField] private float _attackCooldown = 1f;
@@ -24,7 +21,6 @@ namespace Relentless.Enemies.Base
         [SerializeField] private int _minDropCount = 1;
         [SerializeField] private int _maxDropCount = 2;
 
-        public Sprite Sprite { get => _sprite; }
         public float Damage { get => _damage; set => _damage = value; }
         public float AttackCooldown { get => _attackCooldown; set => _attackCooldown = value; }
         public float Speed { get => _speed; set => _speed = value; }
@@ -32,6 +28,10 @@ namespace Relentless.Enemies.Base
         public IReadOnlyList<DroppedItem> PossibleDrops { get => _possibleDrops; }
         public int MinDropCount { get => _minDropCount; set => _minDropCount = value; }
         public int MaxDropCount { get => _maxDropCount; set => _maxDropCount = value; }
+
+        //TODO Create a method for adding a possible drop
+        //Create a method for removing a possible drop
+        //
 
 #if UNITY_EDITOR
         private void OnValidate()
