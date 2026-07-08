@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using Relentless.Player.Attack.Base;
 using System.Collections;
+using Relentless.Player.Weapons.Base;
 
-namespace Relentless.Player.Attack.Axe
+namespace Relentless.Player.Weapons.Axe
 {
     /// <summary>
     /// Axe swings in a limited angle, dealing high damage to all the targets within it.
@@ -21,8 +21,6 @@ namespace Relentless.Player.Attack.Axe
 
         private IEnumerator AxeSwing()
         {
-            yield return new WaitForSeconds(_data.PreparationTime);
-
             //Swing logics
 
             yield return new WaitForSeconds(_data.Cooldown);

@@ -1,9 +1,9 @@
-﻿using Relentless.Player.Attack.Base;
+﻿using Relentless.Player.Weapons.Base;
 using UnityEngine;
 
-namespace Relentless.Player.Attack.Sword
+namespace Relentless.Player.Weapons.Sword
 {
-    [CreateAssetMenu(fileName = "Sword Data", menuName = "Relentless/Player/Attack/Sword")]
+    [CreateAssetMenu(fileName = "New Sword", menuName = "Relentless/Weapons/Sword Data")]
     public class SwordData : WeaponData
     {
         [Header("Sword")]

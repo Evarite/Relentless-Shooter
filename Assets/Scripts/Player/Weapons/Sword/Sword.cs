@@ -1,8 +1,8 @@
-﻿using Relentless.Player.Attack.Base;
+﻿using Relentless.Player.Weapons.Base;
 using System.Collections;
 using UnityEngine;
 
-namespace Relentless.Player.Attack.Sword
+namespace Relentless.Player.Weapons.Sword
 {
     /// <summary>
     /// Sword spins around the player, dealing the damage to all the targets. It's damage is reduced with every target.
@@ -23,9 +23,8 @@ namespace Relentless.Player.Attack.Sword
 
         private IEnumerator SwordSwing()
         {
-            yield return new WaitForSeconds(_data.PreparationTime);
-
-            //Swing logics via transform (I'm not sure if I need Rigidbody here, probably I do not)
+            //Swing logics via transform (I'm not sure if I need Rigidbody here,
+            //probably I do not)
             //and using the player as the center point
 
             yield return new WaitForSeconds(_data.Cooldown);
