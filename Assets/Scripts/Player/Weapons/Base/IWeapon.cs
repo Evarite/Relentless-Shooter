@@ -1,9 +1,9 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 
 namespace Relentless.Player.Attack.Base
 {
     public interface IWeapon
     {
-        void Attack();
+        void Attack(Vector2 direction);
     }
 }

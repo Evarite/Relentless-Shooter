@@ -24,8 +24,6 @@ namespace Relentless.Enemies.Base
 
         protected virtual IEnumerator Attack()
         {
-            Debug.Log("Attack started");
-
             while (GameManager.Player != null)
             {
                 playerHealth.React(_enemyData.Damage);
@@ -37,8 +35,6 @@ namespace Relentless.Enemies.Base
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("Trigger collision detected");
-
             if (!collision.CompareTag(playerTag))
                 return;
 

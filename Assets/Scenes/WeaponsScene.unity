@@ -472,7 +472,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7270568606637039578, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
   m_PrefabInstance: {fileID: 6606580754531869000}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 501045915}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 013e9a86f802a314cbfa9abc360bd666, type: 3}
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 619517579480953586, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
   m_PrefabInstance: {fileID: 6606580754531869000}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 501045915}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 319420e783b03fd41bb454f61334c4f2, type: 3}
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab74bf6157959c849b48b7cfdd2bae81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Player.Weapons.Sword.Sword
-  _data: {fileID: 0}
+  _data: {fileID: 11400000, guid: 92cc532ea8f061a4b92a0c2b6ea52fba, type: 2}
 --- !u!61 &318266067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &467024071
 SpriteRenderer:
   serializedVersion: 2
@@ -1190,6 +1190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7417ba64f075942be39f7eee9d6fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyAttack
+--- !u!1 &501045915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7797494009958854642, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
+  m_PrefabInstance: {fileID: 6606580754531869000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &572245784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,13 +5659,29 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1732289619506966995, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 318266065}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7797494009958854642, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6606580754531869012}
   m_SourcePrefab: {fileID: 100100000, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
 --- !u!4 &6606580754531869001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1732289619506966995, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
   m_PrefabInstance: {fileID: 6606580754531869000}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6606580754531869012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501045915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3813f9cc965c7e84d8e6639b95301ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Player.Controls.AttackControls
+  _weapon: {fileID: 318266066}
 --- !u!1 &6680477099543056134
 GameObject:
   m_ObjectHideFlags: 0

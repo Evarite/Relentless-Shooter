@@ -8,6 +8,6 @@ namespace Relentless.Player.Weapons.Base
     { 
         protected abstract WeaponData WeaponProperties { get; }
 
-        public abstract void Attack();
+        public abstract void Attack(Vector2 direction);
     }
 }

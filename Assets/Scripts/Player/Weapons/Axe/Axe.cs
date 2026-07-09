@@ -14,12 +14,12 @@ namespace Relentless.Player.Weapons.Axe
 
         private Coroutine _attack;
 
-        public override void Attack()
+        public override void Attack(Vector2 direction)
         {
-            _attack ??= StartCoroutine(AxeSwing());
+            _attack ??= StartCoroutine(AxeSwing(direction));
         }
 
-        private IEnumerator AxeSwing()
+        private IEnumerator AxeSwing(Vector2 direction)
         {
             //Swing logics
 
