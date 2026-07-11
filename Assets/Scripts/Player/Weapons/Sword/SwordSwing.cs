@@ -1,48 +1,43 @@
-﻿using Relentless.Player.Weapons.Base;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Relentless.Player.Weapons.Sword
 {
-    /// <summary>
-    /// Sword spins around the player, dealing the damage to all the targets. It's damage is reduced with every target.
-    /// </summary>
-
-    [RequireComponent(typeof(Collider2D))]
-    public class SwordSwing : Weapon
+    public class SwordSwing : MonoBehaviour
     {
-        [SerializeField] private SwordData _data;
-        protected override WeaponData WeaponProperties => _data;
+        private Coroutine _attack = null;
 
-        private Coroutine _attack;
-
+        private float _rotationDegrees = 360f;
         private Vector2 _pivotPoint = Vector2.zero;
         private Vector3 _rotationAxis = Vector3.forward;
         private Vector2 _pivotOffset;
-        private float _rotationDegrees = 360f;
 
-        private void Awake()
+        public void Attack(Vector2 direction, SwordData data)
         {
-            _pivotOffset = transform.position;
-            gameObject.SetActive(false);
+            _attack ??= StartCoroutine(Swing(direction, data));
         }
 
-        public override void Attack(Vector2 direction)
+        private void Awake() => _pivotOffset = transform.position;
+
+        private void OnDisable()
         {
-            gameObject.SetActive(true);
-            _attack ??= StartCoroutine(Swing(direction));
+            if (_attack != null)
+            {
+                StopCoroutine(_attack);
+                _attack = null;
+            }
         }
 
-        private IEnumerator Swing(Vector2 direction)
+        private IEnumerator Swing(Vector2 direction, SwordData data)
         {
             Quaternion startRotation = SetInitialPosition(direction);
 
-            float totalAngle = _data.Rotations * _rotationDegrees;
+            float totalAngle = data.Rotations * _rotationDegrees;
             float elapsed = 0f;
 
-            while (elapsed < _data.AttackDuration)
+            while (elapsed < data.AttackDuration)
             {
-                float t = elapsed / _data.AttackDuration;
+                float t = elapsed / data.AttackDuration;
                 float easedT = EaseInOut(t);
 
                 float currentAngle = totalAngle * easedT;
@@ -58,7 +53,8 @@ namespace Relentless.Player.Weapons.Sword
                 yield return null;
             }
 
-            yield return new WaitForSeconds(_data.Cooldown);
+            yield return new WaitForSeconds(data.Cooldown);
+
             _attack = null;
             gameObject.SetActive(false);
         }
