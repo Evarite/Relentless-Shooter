@@ -43,7 +43,7 @@ namespace Relentless.Player.Weapons.Sword
 
                 float currentAngle = totalAngle * easedT;
 
-                Quaternion delta = Quaternion.AngleAxis(currentAngle, _rotationAxis);
+                Quaternion delta = Quaternion.AngleAxis(-currentAngle, _rotationAxis);
 
                 transform.rotation = startRotation * delta;
 

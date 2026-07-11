@@ -17,7 +17,6 @@ namespace Relentless.Player.Weapons.Sword
         public static void DealDamage(IHittable hittable)
         {
             hittable.React(_currentDamage);
-            Debug.Log(_currentDamage);
             _currentDamage = Mathf.Max(0, _currentDamage - _data.DamageReduction);
         }
     }

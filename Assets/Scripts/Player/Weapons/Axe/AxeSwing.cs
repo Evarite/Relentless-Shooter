@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Relentless.Utilities;
+using System.Collections;
 using UnityEngine;
 
 namespace Relentless.Player.Weapons.Axe
@@ -27,9 +28,30 @@ namespace Relentless.Player.Weapons.Axe
 
         private IEnumerator Swing(Vector2 direction, AxeData data)
         {
-            SetInitialPosition(direction, data);
+            Quaternion startRotation = SetInitialPosition(direction, data);
 
+            float elapsed = 0f;
 
+            while(elapsed < data.AttackDuration)
+            {
+                float t = elapsed / data.AttackDuration;
+                float easedT = Easings.EeaseInBackOutQuart(t);
+
+                float currentAngle = data.MaxSwingAngle * easedT;
+                Quaternion delta = Quaternion.AngleAxis(-currentAngle, _rotationAxis);
+
+                transform.rotation = delta * startRotation;
+                transform.localPosition = (Vector3)_pivotPoint + (transform.rotation * _pivotOffset);
+
+                elapsed += Time.deltaTime;
+
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(data.AttackDuration);
+
+            _attack = null;
+            gameObject.SetActive(false);
         }
 
         private Quaternion SetInitialPosition(Vector2 direction, AxeData data)
