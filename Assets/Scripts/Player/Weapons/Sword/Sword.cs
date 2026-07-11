@@ -8,7 +8,7 @@ namespace Relentless.Player.Weapons.Sword
     /// <summary>
     /// Sword spins around the player, dealing the damage to all the targets. It's damage is reduced with every target.
     /// </summary>
-    [RequireComponent(typeof(Collider2D))]
+ 
     [RequireComponent(typeof(SwordSwing))]
     public class Sword : Weapon
     {

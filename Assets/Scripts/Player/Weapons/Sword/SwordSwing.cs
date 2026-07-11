@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Relentless.Utilities;
 
 namespace Relentless.Player.Weapons.Sword
 {
@@ -17,7 +18,7 @@ namespace Relentless.Player.Weapons.Sword
             _attack ??= StartCoroutine(Swing(direction, data));
         }
 
-        private void Awake() => _pivotOffset = transform.position;
+        private void Awake() => _pivotOffset = transform.localPosition;
 
         private void OnDisable()
         {
@@ -38,7 +39,7 @@ namespace Relentless.Player.Weapons.Sword
             while (elapsed < data.AttackDuration)
             {
                 float t = elapsed / data.AttackDuration;
-                float easedT = EaseInOut(t);
+                float easedT = Easings.EaseInOut(t);
 
                 float currentAngle = totalAngle * easedT;
 
@@ -71,7 +72,5 @@ namespace Relentless.Player.Weapons.Sword
 
             return rotation;
         }
-
-        private float EaseInOut(float x) => -1 * (Mathf.Cos(Mathf.PI * x) - 1) / 2;
     }
 }
