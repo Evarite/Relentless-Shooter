@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AxeExample
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Player.Weapons.Axe.AxeData
   _damage: 15
-  _attackDuration: 1
+  _attackDuration: 0.5
   _cooldown: 0.4
-  _maxSwingAngle: 45
+  _maxSwingAngle: 140
