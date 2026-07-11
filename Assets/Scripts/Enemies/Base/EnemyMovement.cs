@@ -3,9 +3,13 @@
 namespace Relentless.Enemies.Base
 {
     [RequireComponent(typeof(Enemy))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyMovement : MonoBehaviour
     {
         private EnemyData _enemyData;
+        private Rigidbody2D _rb;
+
+        private void Awake() => _rb = GetComponent<Rigidbody2D>();
 
         private void Start()
         {
@@ -13,18 +17,21 @@ namespace Relentless.Enemies.Base
             _enemyData = enemy.Data;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (GameManager.Player == null)
                 return;
 
-            Vector3 playerPos = GameManager.Player.transform.position;
-            Vector2 dif = playerPos - transform.position;
-            if(dif.magnitude <= _enemyData.StopThreshold)
+            Vector2 playerPos = GameManager.Player.transform.position;
+            Vector2 dif = playerPos - (Vector2)transform.position;
+            if (dif.sqrMagnitude <= _enemyData.StopThreshold * _enemyData.StopThreshold)
+            {
+                _rb.linearVelocity = Vector2.zero;
                 return;
+            }
 
             Vector2 direction = dif.normalized;
-            transform.position += (Vector3)direction * _enemyData.Speed * Time.deltaTime;
+            _rb.linearVelocity = direction * _enemyData.Speed;
         }
     }
 }
