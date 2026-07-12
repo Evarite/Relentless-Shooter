@@ -1615,7 +1615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e907c821a72e6c0459900c15c7daba68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Pooling.EnemyPoolManager
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 5417427797743554934, guid: 061e0ec6a06f1fe46a1789daa385d752, type: 3}
   _size: 50
 --- !u!4 &1065215603
 Transform:
@@ -2110,14 +2110,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46d2640ef130944480f10a5526d2682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Pooling.EnemySpawnManager
-  _enemyPools:
-  - {fileID: 1065215602}
-  _maxEnemiesCount: 50
-  _spawnChance: 0.3
-  _spawnInterval: 1
-  _spawnDistance: 30
-  _maxDistance: 100
-  _despawnInterval: 5
+  _data:
+    _enemyPools:
+    - {fileID: 1065215602}
+    _maxEnemiesCount: 50
+    _spawnChance: 0.3
+    _spawnInterval: 1
+    _spawnDistance: 30
+    _maxDistance: 100
+    _despawnInterval: 5
 --- !u!4 &1614374395
 Transform:
   m_ObjectHideFlags: 0
