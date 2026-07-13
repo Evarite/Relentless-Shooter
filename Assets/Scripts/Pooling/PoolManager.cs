@@ -28,7 +28,7 @@ namespace Relentless.Pooling
                 return enemy;
             }
 
-            return null;
+            return default;
         }
 
         public void Return(PooledEntity enemy)

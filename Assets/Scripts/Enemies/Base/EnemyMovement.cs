@@ -17,6 +17,8 @@ namespace Relentless.Enemies.Base
             _enemyData = enemy.Data;
         }
 
+        private void OnDisable() => _rb.linearVelocity = Vector2.zero;
+
         private void FixedUpdate()
         {
             if (GameManager.Player == null)
