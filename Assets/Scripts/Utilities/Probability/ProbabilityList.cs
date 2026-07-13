@@ -25,7 +25,10 @@ namespace Relentless.Utilities.Probability
 
         }
 
+        [Header("Items")]
         [SerializeField] private List<ProbabilityItem> _collection = new();
+        [Header("Empty")]
+        [Tooltip("Relative probability of returning nothing")]
         [SerializeField] private float _emptyProbability = 10f;
 
         private float? _probabilityWeight = null;

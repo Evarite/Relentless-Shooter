@@ -56,10 +56,10 @@ namespace Relentless.Enemies.Pooling
                 if (_enemies.Count > _data.MaxEnemiesCount)
                     yield return new WaitUntil(() => _enemies.Count < _data.MaxEnemiesCount);
 
-                float chance = Random.Range(0f, 1f);
-                if (_data.SpawnChance <= chance)
+                var pool = _data.EnemyPools.GetRandomItem();
+                if (pool != null)
                 {
-                    PooledEntity enemy = _data.EnemyPools.GetRandomItem().Get();
+                    PooledEntity enemy = pool.Get();
                     if (enemy != null)
                     {
                         float x = Random.Range(-1f, 1f);
