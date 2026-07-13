@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using Relentless.Utilities.Probability;
 using UnityEngine;
 
 namespace Relentless.Pooling
@@ -7,7 +7,7 @@ namespace Relentless.Pooling
     public class SpawnManagerData
     {
         [Header("Enemy Kinds")]
-        [SerializeField] private List<PoolManager> _enemyPools;
+        [SerializeField] private ProbabilityList<PoolManager> _enemyPools;
 
         [Header("Spawn Settings")]
         [SerializeField] private int _maxEnemiesCount = 50;
@@ -20,7 +20,7 @@ namespace Relentless.Pooling
         [SerializeField] private float _maxDistance = 100f;
         [SerializeField] private float _despawnInterval = 5f;
 
-        public List<PoolManager> EnemyPools { get => _enemyPools; }
+        public ProbabilityList<PoolManager> EnemyPools { get => _enemyPools; }
         public int MaxEnemiesCount { get => _maxEnemiesCount; set => _maxEnemiesCount = value; }
         public float SpawnChance { get => _spawnChance; set => _spawnChance = value; }
         public float SpawnInterval { get => _spawnInterval; set => _spawnInterval = value; }

@@ -59,7 +59,7 @@ namespace Relentless.Enemies.Pooling
                 float chance = Random.Range(0f, 1f);
                 if (_data.SpawnChance <= chance)
                 {
-                    PooledEntity enemy = _data.EnemyPools[0].Get();
+                    PooledEntity enemy = _data.EnemyPools.GetRandomItem().Get();
                     if (enemy != null)
                     {
                         float x = Random.Range(-1f, 1f);

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Relentless.Utilities.Probability
 {
     [System.Serializable]
-    public class ProbabilityCollection<T>
+    public class ProbabilityList<T>
     {
         [System.Serializable]
         private class ProbabilityItem
