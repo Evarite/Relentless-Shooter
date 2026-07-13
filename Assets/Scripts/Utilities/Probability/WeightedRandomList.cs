@@ -4,10 +4,10 @@ using UnityEngine;
 namespace Relentless.Utilities.Probability
 {
     [System.Serializable]
-    public class ProbabilityList<T>
+    public class WeightedRandomList<T>
     {
         [System.Serializable]
-        private class ProbabilityItem
+        private class Item
         {
             [SerializeField] private T _value;
             [Min(0f)]
@@ -17,7 +17,7 @@ namespace Relentless.Utilities.Probability
             public T Value { get => _value; set => _value = value; }
             public float Probability { get => _probability; set => _probability = value; }
 
-            public ProbabilityItem(T Value, float Probability)
+            public Item(T Value, float Probability)
             {
                 _value = Value;
                 _probability = Probability;
@@ -26,7 +26,7 @@ namespace Relentless.Utilities.Probability
         }
 
         [Header("Items")]
-        [SerializeField] private List<ProbabilityItem> _collection = new();
+        [SerializeField] private List<Item> _collection = new();
         [Header("Empty")]
         [Tooltip("Relative probability of returning nothing")]
         [SerializeField] private float _emptyProbability = 10f;
@@ -62,7 +62,7 @@ namespace Relentless.Utilities.Probability
 
         public void Add(T item, float probability)
         {
-            var newItem = new ProbabilityItem(item, probability);
+            var newItem = new Item(item, probability);
 
             _collection.Add(newItem);
 
@@ -135,7 +135,7 @@ namespace Relentless.Utilities.Probability
             _probabilityWeight = null;
         }
 
-        private void UpdateItemProbability(ProbabilityItem item, float newProbability)
+        private void UpdateItemProbability(Item item, float newProbability)
         {
             if (_probabilityWeight == null)
                 CalculateWeight();
