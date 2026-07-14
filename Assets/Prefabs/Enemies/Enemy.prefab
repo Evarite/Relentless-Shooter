@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8308654391762246482}
   - component: {fileID: 5900980935637424846}
+  - component: {fileID: 8127297921292847301}
+  - component: {fileID: 8521524249046229401}
+  - component: {fileID: 7963075599083684452}
   - component: {fileID: 7990332860084988707}
   - component: {fileID: 2350444558355564840}
   - component: {fileID: 1293905845049485228}
   - component: {fileID: 7571189378764161379}
   - component: {fileID: 9130142380241290466}
-  - component: {fileID: 8127297921292847301}
-  - component: {fileID: 8521524249046229401}
-  - component: {fileID: 7963075599083684452}
   - component: {fileID: -3501919284367707833}
   m_Layer: 0
   m_Name: Enemy
@@ -43,7 +43,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5900980935637424846
 SpriteRenderer:
-  serializedVersion: 2
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,68 +100,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &7990332860084988707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5417427797743554934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 319420e783b03fd41bb454f61334c4f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Relentless.HealthSystem.Health
-  _maxHealth: 50
---- !u!114 &2350444558355564840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5417427797743554934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb17187f8a07a6b4b9c75acb7043dbb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.Enemy
-  _enemyData: {fileID: 11400000, guid: 8d233255403c0884eb790aa0fdec62db, type: 2}
---- !u!114 &1293905845049485228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5417427797743554934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248217bd54efb8646a5ccfab6179ec01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyMovement
---- !u!114 &7571189378764161379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5417427797743554934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aef96c4d280a1c14b935a62c91d5bc10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyDeathHandler
---- !u!114 &9130142380241290466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5417427797743554934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7417ba64f075942be39f7eee9d6fc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyAttack
+  m_BlendShapeWeights: []
 --- !u!58 &8127297921292847301
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -261,6 +200,69 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7990332860084988707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417427797743554934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319420e783b03fd41bb454f61334c4f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.HealthSystem.Health
+  _maxHealth: 50
+--- !u!114 &2350444558355564840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417427797743554934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb17187f8a07a6b4b9c75acb7043dbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.Enemy
+  _enemyData: {fileID: 11400000, guid: 8d233255403c0884eb790aa0fdec62db, type: 2}
+--- !u!114 &1293905845049485228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417427797743554934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248217bd54efb8646a5ccfab6179ec01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyMovement
+--- !u!114 &7571189378764161379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417427797743554934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef96c4d280a1c14b935a62c91d5bc10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyDeathHandler
+  _enemyData: {fileID: 11400000, guid: 8d233255403c0884eb790aa0fdec62db, type: 2}
+--- !u!114 &9130142380241290466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417427797743554934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7417ba64f075942be39f7eee9d6fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyAttack
 --- !u!114 &-3501919284367707833
 MonoBehaviour:
   m_ObjectHideFlags: 0

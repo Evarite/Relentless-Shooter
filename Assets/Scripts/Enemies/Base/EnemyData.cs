@@ -1,6 +1,5 @@
-﻿using Relentless.Inventory;
+﻿using Relentless.Items;
 using Relentless.Utilities.WeightedRandom;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Relentless.Enemies.Base
@@ -27,7 +26,7 @@ namespace Relentless.Enemies.Base
         public float AttackCooldown { get => _attackCooldown; set => _attackCooldown = value; }
         public float Speed { get => _speed; set => _speed = value; }
         public float StopThreshold { get => _stopThreshold; set => _stopThreshold = value; }
-        public IReadOnlyList<ItemData> PossibleDrops { get => _possibleDrops; }
+        public WeightedRandomList<ItemData> PossibleDrops { get => _possibleDrops; }
         public int MinDropCount { get => _minDropCount; set => _minDropCount = value; }
         public int MaxDropCount { get => _maxDropCount; set => _maxDropCount = value; }
 
