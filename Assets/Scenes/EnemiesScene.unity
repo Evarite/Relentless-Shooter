@@ -2081,6 +2081,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1594937935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2608549611345784887, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
+  m_PrefabInstance: {fileID: 6606580754531869000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa45a4929d2826b48b7aca2c80e4942d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Player.Weapons.Axe.Axe
 --- !u!1 &1614374393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5419,6 +5430,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3934312290333204876, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6541665385896663249, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
       propertyPath: _cameraFollow
       value: 
@@ -5430,6 +5445,14 @@ PrefabInstance:
     - target: {fileID: 7797494009958854642, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062369706318856857, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
+      propertyPath: _weapon
+      value: 
+      objectReference: {fileID: 1594937935}
+    - target: {fileID: 8755183251840526920, guid: b43fc4c5908a29e4783b13a2b9c85bb2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

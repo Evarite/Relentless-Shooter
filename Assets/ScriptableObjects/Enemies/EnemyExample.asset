@@ -28,4 +28,4 @@ MonoBehaviour:
       _probability: 10
     _emptyProbability: 10
   _minDropCount: 1
-  _maxDropCount: 2
+  _maxDropCount: 15

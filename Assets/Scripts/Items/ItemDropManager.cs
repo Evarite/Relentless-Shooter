@@ -66,6 +66,11 @@ namespace Relentless.Items
             for (int i = _activeDrops.Count - 1; i >= 0; i--)
             {
                 var drop = _activeDrops[i];
+                if (drop.Transform == null)
+                {
+                    _activeDrops.RemoveAt(i);
+                    continue;
+                }
 
                 drop.Transform.position += (Vector3)drop.Velocity * Time.deltaTime;
                 drop.Velocity *= (1f - _dropSettings.Friction * Time.deltaTime);
