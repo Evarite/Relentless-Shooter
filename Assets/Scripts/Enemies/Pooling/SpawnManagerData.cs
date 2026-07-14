@@ -7,7 +7,7 @@ namespace Relentless.Pooling
     public class SpawnManagerData
     {
         [Header("Enemy Kinds")]
-        [SerializeField] private WeightedRandomList<PoolManager> _enemyPools;
+        [SerializeField] private WeightedRandomList<ObjectPool> _enemyPools;
 
         [Header("Spawn Settings")]
         [SerializeField] private int _maxEnemiesCount = 50;
@@ -19,7 +19,7 @@ namespace Relentless.Pooling
         [SerializeField] private float _maxDistance = 100f;
         [SerializeField] private float _despawnInterval = 5f;
 
-        public WeightedRandomList<PoolManager> EnemyPools { get => _enemyPools; }
+        public WeightedRandomList<ObjectPool> EnemyPools { get => _enemyPools; }
         public int MaxEnemiesCount { get => _maxEnemiesCount; set => _maxEnemiesCount = value; }
         public float SpawnInterval { get => _spawnInterval; set => _spawnInterval = value; }
         public float SpawnDistance { get => _spawnDistance; set => _spawnDistance = value; }

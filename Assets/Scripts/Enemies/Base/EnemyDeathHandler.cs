@@ -9,18 +9,18 @@ namespace Relentless.Enemies.Base
     public class EnemyDeathHandler : MonoBehaviour, IDeathHandler
     {
         private EnemyData _enemyData;
-        private PooledEntity _pe;
+        private PooledEntity _entity;
 
         private void Awake()
         {
-            _pe = GetComponent<PooledEntity>();
+            _entity = GetComponent<PooledEntity>();
             _enemyData = GetComponent<Enemy>().Data;
         }
 
         public void Die()
         {
             EnemyItemDrop.SpawnItem(_enemyData);
-            _pe.Return();
+            _entity.Return();
         }
     }
 }

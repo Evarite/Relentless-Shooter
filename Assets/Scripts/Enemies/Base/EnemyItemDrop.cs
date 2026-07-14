@@ -12,6 +12,7 @@ namespace Relentless.Enemies.Base
             {
                 int count = Random.Range(enemyData.MinDropCount, enemyData.MaxDropCount);
                 ItemDropManager.SpawnDroppedItem(droppedItem.Prefab, count);
+                Debug.Log($"Spawned: {droppedItem.Name}, {count}");
             }
         }
     }

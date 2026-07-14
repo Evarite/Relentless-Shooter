@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb17187f8a07a6b4b9c75acb7043dbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.Enemy
-  _enemyData: {fileID: 11400000, guid: 8d233255403c0884eb790aa0fdec62db, type: 2}
+  _enemyData: {fileID: 11400000, guid: e921aa3273ec74642a5de8df4e5465bd, type: 2}
 --- !u!114 &1293905845049485228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aef96c4d280a1c14b935a62c91d5bc10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Enemies.Base.EnemyDeathHandler
-  _enemyData: {fileID: 11400000, guid: 8d233255403c0884eb790aa0fdec62db, type: 2}
 --- !u!114 &9130142380241290466
 MonoBehaviour:
   m_ObjectHideFlags: 0

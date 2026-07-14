@@ -50,8 +50,6 @@ namespace Relentless.Enemies.Base
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("Trigger collision detected");
-
             if (!collision.CompareTag(playerTag))
                 return;
 

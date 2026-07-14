@@ -4,7 +4,7 @@ namespace Relentless.Pooling
 {
     public class PooledEntity : MonoBehaviour
     {
-        public PoolManager Pool { private get; set; }
+        public ObjectPool Pool { private get; set; }
 
         public void Return()
         {

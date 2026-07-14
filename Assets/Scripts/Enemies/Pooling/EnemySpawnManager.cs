@@ -31,6 +31,9 @@ namespace Relentless.Enemies.Pooling
 
             _waitForSpawnInterval = new WaitForSeconds(_data.SpawnInterval);
             _waitForDespawnInterval = new WaitForSeconds(_data.DespawnInterval);
+
+            foreach (var pool in _data.EnemyPools)
+                pool.Initialize(LayerMask.NameToLayer("Enemies"));
         }
 
         private void OnEnable()

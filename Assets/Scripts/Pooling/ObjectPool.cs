@@ -3,19 +3,34 @@ using UnityEngine;
 
 namespace Relentless.Pooling
 {
-    public class PoolManager : MonoBehaviour
+    public class ObjectPool : MonoBehaviour
     {
         [SerializeField] private GameObject _prefab;
         [SerializeField] private int _size = 50;
         private Queue<PooledEntity> _pool = new();
 
-        private void Awake()
+        public void Initialize()
         {
             for (int i = 0; i < _size; i++)
             {
                 GameObject enemy = Instantiate(_prefab, gameObject.transform);
                 enemy.SetActive(false);
                 _pool.Enqueue(enemy.GetComponent<PooledEntity>());
+            }
+        }
+
+        public void Initialize(int layerIndex)
+        {
+            for (int i = 0; i < _size; i++)
+            {
+                GameObject enemy = Instantiate(_prefab, gameObject.transform);
+                enemy.layer = layerIndex;
+                enemy.SetActive(false);
+
+                var pooledEntity = enemy.GetComponent<PooledEntity>();
+                pooledEntity.Pool = this;
+
+                _pool.Enqueue(pooledEntity);
             }
         }
 
