@@ -17,12 +17,14 @@ namespace Relentless.Enemies.Base.Data
 
         [Header("Item Drop")]
         [SerializeField] private WeightedRandomList<DroppedItemData> _possibleDrops;
+        [SerializeField] private int _dropIterations;
 
         public float Damage { get => _damage; set => _damage = value; }
         public float AttackCooldown { get => _attackCooldown; set => _attackCooldown = value; }
         public float Speed { get => _speed; set => _speed = value; }
         public float StopThreshold { get => _stopThreshold; set => _stopThreshold = value; }
         public WeightedRandomList<DroppedItemData> PossibleDrops { get => _possibleDrops; }
+        public int DropIterations { get => _dropIterations; set => _dropIterations = value; }
 
         //TODO Create a method for adding a possible drop and changing random weight
         //Create a method for removing a possible drop

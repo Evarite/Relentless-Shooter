@@ -8,12 +8,18 @@ namespace Relentless.Enemies.Base
     {
         public static void SpawnItem(EnemyData enemyData)
         {
-            var droppedItem = enemyData.PossibleDrops.GetRandomItem();
-            if (droppedItem != null)
+            for (int i = 0; i < enemyData.DropIterations; i++)
             {
-                int count = Random.Range(droppedItem.MinDropCount, droppedItem.MaxDropCount);
-                ItemDropManager.SpawnDroppedItem(droppedItem.Item.Prefab, count);
+                var droppedItem = enemyData.PossibleDrops.GetRandomItem();
+                if (droppedItem != null)
+                    SpawnUniqueItem(droppedItem);
             }
+        }
+
+        public static void SpawnUniqueItem(DroppedItemData droppedItem)
+        {
+            int count = Random.Range(droppedItem.MinDropCount, droppedItem.MaxDropCount);
+            ItemDropManager.SpawnDroppedItem(droppedItem.Item.Prefab, count);
         }
     }
 }
