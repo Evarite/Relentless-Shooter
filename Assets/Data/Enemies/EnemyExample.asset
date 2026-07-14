@@ -18,14 +18,25 @@ MonoBehaviour:
   _stopThreshold: 1
   _possibleDrops:
     _collection:
-    - _value: {fileID: 11400000, guid: 6a91b0aa7ce5766449d945cecb7846a6, type: 2}
+    - _value:
+        _item: {fileID: 11400000, guid: 6a91b0aa7ce5766449d945cecb7846a6, type: 2}
+        _minDropCount: 2
+        _maxDropCount: 5
+      _probability: 9
+    - _value:
+        _item: {fileID: 11400000, guid: efa03b3434d5e4645a4ec5039c0c58bc, type: 2}
+        _minDropCount: 8
+        _maxDropCount: 4
       _probability: 10
-    - _value: {fileID: 11400000, guid: efa03b3434d5e4645a4ec5039c0c58bc, type: 2}
-      _probability: 10
-    - _value: {fileID: 11400000, guid: 56daf24f371f8de42aa81398b92b1ef3, type: 2}
-      _probability: 10
-    - _value: {fileID: 11400000, guid: 199565dde258a5e4d88c63eff468cbe0, type: 2}
-      _probability: 10
+    - _value:
+        _item: {fileID: 11400000, guid: 56daf24f371f8de42aa81398b92b1ef3, type: 2}
+        _minDropCount: 1
+        _maxDropCount: 2
+      _probability: 5
+    - _value:
+        _item: {fileID: 11400000, guid: 199565dde258a5e4d88c63eff468cbe0, type: 2}
+        _minDropCount: 5
+        _maxDropCount: 10
+      _probability: 15
     _emptyProbability: 10
-  _minDropCount: 1
-  _maxDropCount: 15
+  _dropIterations: 3

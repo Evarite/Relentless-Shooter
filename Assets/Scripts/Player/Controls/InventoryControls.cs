@@ -1,4 +1,4 @@
-using Relentless;
+using Relentless.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

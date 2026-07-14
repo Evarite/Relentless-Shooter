@@ -1,4 +1,5 @@
 ﻿using Relentless.CameraSystem;
+using Relentless.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -45,7 +46,7 @@ namespace Relentless.Player.Controls
                 _normalizedOffset.x /= Screen.width * 0.5f;
                 _normalizedOffset.y /= Screen.height * 0.5f;
             }
-            else if (device is Gamepad || device ==null )
+            else if (device is Gamepad || device == null)
             {
                 _normalizedOffset = rawInput;
             }

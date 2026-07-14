@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Relentless.Managers;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Relentless.Inventory.UI
