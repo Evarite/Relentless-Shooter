@@ -1,4 +1,4 @@
-﻿using Relentless.Utilities.Probability;
+﻿using Relentless.Utilities.WeightedRandom;
 using UnityEngine;
 
 namespace Relentless.Pooling

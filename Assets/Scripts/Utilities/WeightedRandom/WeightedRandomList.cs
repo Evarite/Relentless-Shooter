@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Relentless.Utilities.Probability
+namespace Relentless.Utilities.WeightedRandom
 {
     [System.Serializable]
-    public class WeightedRandomList<T>
+    public class WeightedRandomList<T> : IReadOnlyList<T>
     {
         [System.Serializable]
-        private class Item
+        private class WeightedItem
         {
             [SerializeField] private T _value;
             [Min(0f)]
@@ -17,7 +18,7 @@ namespace Relentless.Utilities.Probability
             public T Value { get => _value; set => _value = value; }
             public float Probability { get => _probability; set => _probability = value; }
 
-            public Item(T Value, float Probability)
+            public WeightedItem(T Value, float Probability)
             {
                 _value = Value;
                 _probability = Probability;
@@ -26,7 +27,7 @@ namespace Relentless.Utilities.Probability
         }
 
         [Header("Items")]
-        [SerializeField] private List<Item> _collection = new();
+        [SerializeField] private List<WeightedItem> _collection = new();
         [Header("Empty")]
         [Tooltip("Relative probability of returning nothing")]
         [SerializeField] private float _emptyProbability = 10f;
@@ -62,7 +63,7 @@ namespace Relentless.Utilities.Probability
 
         public void Add(T item, float probability)
         {
-            var newItem = new Item(item, probability);
+            var newItem = new WeightedItem(item, probability);
 
             _collection.Add(newItem);
 
@@ -135,7 +136,19 @@ namespace Relentless.Utilities.Probability
             _probabilityWeight = null;
         }
 
-        private void UpdateItemProbability(Item item, float newProbability)
+        public T this[int index] => _collection[index].Value;
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            foreach (var item in _collection)
+            {
+                yield return item.Value;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        private void UpdateItemProbability(WeightedItem item, float newProbability)
         {
             if (_probabilityWeight == null)
                 CalculateWeight();

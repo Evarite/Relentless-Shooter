@@ -2114,10 +2114,9 @@ MonoBehaviour:
     _enemyPools:
       _collection:
       - _value: {fileID: 1065215602}
-        _probability: 6
-      _emptyProbability: 0
+        _probability: 1
+      _emptyProbability: 3
     _maxEnemiesCount: 50
-    _spawnChance: 0.3
     _spawnInterval: 1
     _spawnDistance: 30
     _maxDistance: 100
