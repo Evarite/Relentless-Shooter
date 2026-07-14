@@ -8,33 +8,50 @@ namespace Relentless.Enemies.Base
     [RequireComponent(typeof(Collider2D))]
     public class EnemyAttack : MonoBehaviour
     {
-        protected EnemyData _enemyData;
+        protected EnemyData enemyData;
         protected Health playerHealth;
         protected Coroutine attack;
 
-        protected WaitForSeconds attackCooldown;
-
         protected string playerTag = "Player";
+
+        private WaitUntil _untilAttackPossible;
+        private WaitForSeconds _waitForCooldown;
+        private bool _canAttack = true;
 
         protected virtual void Awake()
         {
-            _enemyData = GetComponent<Enemy>().Data;
-            attackCooldown = new WaitForSeconds(_enemyData.AttackCooldown);
+            enemyData = GetComponent<Enemy>().Data;
+            _untilAttackPossible = new WaitUntil(() => _canAttack);
+            _waitForCooldown = new WaitForSeconds(enemyData.AttackCooldown);
         }
 
-        protected virtual IEnumerator Attack()
+        protected virtual IEnumerator PerformAttack()
         {
+            if (!_canAttack)
+                yield return _untilAttackPossible;
+
             while (GameManager.Player != null)
             {
-                playerHealth.React(_enemyData.Damage);
-                yield return new WaitForSeconds(_enemyData.AttackCooldown);
+                _canAttack = false;
+                playerHealth.React(enemyData.Damage);
+                StartCoroutine(AttackDelay());
+                yield return _untilAttackPossible;
             }
 
             attack = null;
         }
 
+        protected IEnumerator AttackDelay()
+        {
+            yield return _waitForCooldown;
+
+            _canAttack = true;
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            Debug.Log("Trigger collision detected");
+
             if (!collision.CompareTag(playerTag))
                 return;
 
@@ -45,7 +62,7 @@ namespace Relentless.Enemies.Base
                 return;
 
             if (attack == null)
-                attack = StartCoroutine(Attack());
+                attack = StartCoroutine(PerformAttack());
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -62,11 +79,9 @@ namespace Relentless.Enemies.Base
 
         private void OnDisable()
         {
-            if (attack != null)
-            {
-                StopCoroutine(attack);
-                attack = null;
-            }
+            StopAllCoroutines();
+            _canAttack = true;
+            attack = null;
         }
     }
 }

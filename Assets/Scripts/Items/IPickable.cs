@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Relentless.Inventory.Items
+namespace Relentless.Items
 {
     public interface IPickable
     {

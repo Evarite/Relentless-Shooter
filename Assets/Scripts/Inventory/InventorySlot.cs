@@ -1,4 +1,6 @@
-﻿namespace Relentless.Inventory
+﻿using Relentless.Items;
+
+namespace Relentless.Inventory
 {
     public class InventorySlot
     {
