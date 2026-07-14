@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Relentless.Enemies.Base.Data;
+using UnityEngine;
 
 namespace Relentless.Enemies.Base
 {

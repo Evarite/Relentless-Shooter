@@ -1,8 +1,7 @@
-﻿using Relentless.Items;
-using Relentless.Utilities.WeightedRandom;
+﻿using Relentless.Utilities.WeightedRandom;
 using UnityEngine;
 
-namespace Relentless.Enemies.Base
+namespace Relentless.Enemies.Base.Data
 {
     [CreateAssetMenu(menuName = "Relentless/Enemies/Enemy Data", fileName = "New Enemy")]
     public class EnemyData : ScriptableObject
@@ -17,29 +16,15 @@ namespace Relentless.Enemies.Base
         [SerializeField] private float _stopThreshold = 1f;
 
         [Header("Item Drop")]
-        [SerializeField] private WeightedRandomList<ItemData> _possibleDrops;
-        [Min(1)]
-        [SerializeField] private int _minDropCount = 1;
-        [SerializeField] private int _maxDropCount = 2;
+        [SerializeField] private WeightedRandomList<DroppedItemData> _possibleDrops;
 
         public float Damage { get => _damage; set => _damage = value; }
         public float AttackCooldown { get => _attackCooldown; set => _attackCooldown = value; }
         public float Speed { get => _speed; set => _speed = value; }
         public float StopThreshold { get => _stopThreshold; set => _stopThreshold = value; }
-        public WeightedRandomList<ItemData> PossibleDrops { get => _possibleDrops; }
-        public int MinDropCount { get => _minDropCount; set => _minDropCount = value; }
-        public int MaxDropCount { get => _maxDropCount; set => _maxDropCount = value; }
+        public WeightedRandomList<DroppedItemData> PossibleDrops { get => _possibleDrops; }
 
-        //TODO Create a method for adding a possible drop
+        //TODO Create a method for adding a possible drop and changing random weight
         //Create a method for removing a possible drop
-        //
-
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            if (_maxDropCount < _minDropCount)
-                _maxDropCount = _minDropCount;
-        }
-#endif
     }
 }

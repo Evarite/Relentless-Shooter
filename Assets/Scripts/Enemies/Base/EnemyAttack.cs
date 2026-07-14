@@ -1,4 +1,5 @@
-﻿using Relentless.HealthSystem;
+﻿using Relentless.Enemies.Base.Data;
+using Relentless.HealthSystem;
 using System.Collections;
 using UnityEngine;
 
