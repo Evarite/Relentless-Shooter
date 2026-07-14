@@ -1,4 +1,4 @@
-﻿using Relentless.Player.Attack.Base;
+﻿using Relentless.Managers;
 using Relentless.Player.Weapons.Base;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -29,12 +29,12 @@ namespace Relentless.Player.Controls
 
             Vector2 direction = Vector2.zero;
 
-            if(device is Mouse)
+            if (device is Mouse)
             {
                 Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
                 direction = (rawInput - screenCenter).normalized;
             }
-            else if(device is Gamepad)
+            else if (device is Gamepad)
             {
                 direction = rawInput.normalized;
             }

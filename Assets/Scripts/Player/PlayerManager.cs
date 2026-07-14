@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Relentless.Managers;
+using UnityEngine;
 
 namespace Relentless.Player
 {

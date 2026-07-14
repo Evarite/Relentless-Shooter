@@ -1,4 +1,5 @@
-﻿using Relentless.Pooling;
+﻿using Relentless.Managers;
+using Relentless.Pooling;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

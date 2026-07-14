@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Relentless.Managers;
+using UnityEngine;
 
 namespace Relentless.CameraSystem
 {
@@ -17,13 +18,13 @@ namespace Relentless.CameraSystem
 
         private void OnEnable()
         {
-            if(GameManager.Player != null)
+            if (GameManager.Player != null)
                 GetPlayerTransform();
         }
 
         private void LateUpdate()
         {
-            if(_playerTransform == null)
+            if (_playerTransform == null)
             {
                 GetPlayerTransform();
                 if (_playerTransform == null)

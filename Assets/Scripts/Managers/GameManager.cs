@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Relentless
+namespace Relentless.Managers
 {
     [AddComponentMenu("Relentless/Managers/Game Manager")]
     public class GameManager : MonoBehaviour
@@ -35,6 +35,8 @@ namespace Relentless
             InputActions.Player.Enable();
             InputActions.Inventory.Disable();
             InputActions.Pause.Disable();
+
+            TimeManager.UnfreezeTime();
         }
 
         public static void ActivateInventory()
@@ -42,6 +44,8 @@ namespace Relentless
             InputActions.Player.Disable();
             InputActions.Inventory.Enable();
             InputActions.Pause.Disable();
+
+            TimeManager.FreezeTime();
         }
 
         public static void ActivatePause()
@@ -49,6 +53,8 @@ namespace Relentless
             InputActions.Player.Disable();
             InputActions.Inventory.Disable();
             InputActions.Pause.Enable();
+
+            TimeManager.FreezeTime();
         }
     }
 }

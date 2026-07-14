@@ -1,4 +1,5 @@
-﻿using Relentless.Player.StaminaSystem;
+﻿using Relentless.Managers;
+using Relentless.Player.StaminaSystem;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
