@@ -1,7 +1,7 @@
-﻿using UnityEditor;
+﻿using Relentless.Inventory;
 using UnityEngine;
 
-namespace Relentless.Inventory.Items
+namespace Relentless.Items
 {
     [RequireComponent(typeof(SpriteRenderer))]
     [RequireComponent(typeof(Collider2D))]

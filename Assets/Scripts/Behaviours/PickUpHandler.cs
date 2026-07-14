@@ -1,4 +1,4 @@
-﻿using Relentless.Inventory.Items;
+﻿using Relentless.Items;
 using UnityEngine;
 
 namespace Relentless.Behaviours

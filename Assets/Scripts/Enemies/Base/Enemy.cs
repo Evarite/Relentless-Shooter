@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Relentless.HealthSystem;
+using Relentless.Enemies.Base.Data;
 
 namespace Relentless.Enemies.Base
 {

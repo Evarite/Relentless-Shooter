@@ -12,7 +12,7 @@ namespace Relentless.HealthSystem
 
         private IDeathHandler _deathHandler;
 
-        public event Action OnDamageTaken; 
+        public event Action OnDamageTaken;
 
         private void Awake()
         {

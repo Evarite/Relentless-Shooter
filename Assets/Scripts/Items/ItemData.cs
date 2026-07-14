@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Relentless.Inventory
+namespace Relentless.Items
 {
     [CreateAssetMenu(fileName = "Item Data", menuName = "Relentless/Inventory/Item")]
     public class ItemData : ScriptableObject

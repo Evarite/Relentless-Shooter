@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Relentless.Inventory.Items
+namespace Relentless.Items
 {
     public class ItemDropManager : MonoBehaviour
     {
@@ -32,7 +32,7 @@ namespace Relentless.Inventory.Items
             while (count > 0)
             {
                 Vector2 direction = UnityEngine.Random.insideUnitCircle.normalized;
-                Vector2 spawnPosition = (Vector2)GameManager.Player.transform.position + 
+                Vector2 spawnPosition = (Vector2)GameManager.Player.transform.position +
                     direction * dropSettings.SpawnDistance; //Player can't be null now
                 Quaternion spawnRotation = Quaternion.Euler(0, 0,
                     UnityEngine.Random.Range(dropSettings.MinSpawnAngle, dropSettings.MaxSpawnAngle)
@@ -63,9 +63,14 @@ namespace Relentless.Inventory.Items
 
         private void Update()
         {
-            for(int i = _activeDrops.Count - 1; i >= 0; i--)
+            for (int i = _activeDrops.Count - 1; i >= 0; i--)
             {
                 var drop = _activeDrops[i];
+                if (drop.Transform == null)
+                {
+                    _activeDrops.RemoveAt(i);
+                    continue;
+                }
 
                 drop.Transform.position += (Vector3)drop.Velocity * Time.deltaTime;
                 drop.Velocity *= (1f - _dropSettings.Friction * Time.deltaTime);
@@ -73,7 +78,7 @@ namespace Relentless.Inventory.Items
                 drop.Transform.Rotate(0, 0, drop.AngularVelocity * Time.deltaTime);
                 drop.AngularVelocity *= (1f - _dropSettings.Friction * Time.deltaTime);
 
-                if(drop.Velocity.magnitude < _dropSettings.StopThreshold)
+                if (drop.Velocity.magnitude < _dropSettings.StopThreshold)
                 {
                     drop.AngularVelocity = 0f;
                     _activeDrops.RemoveAt(i);
