@@ -10,5 +10,6 @@ namespace Relentless.Items
         [field: SerializeField] public bool IsStackable { get; private set; } = true;
         [field: SerializeField] public int MaxStackSize { get; private set; } = 99;
         [field: SerializeField] public GameObject Prefab { get; private set; }
+        [field: SerializeField] public float Lifetime { get; private set; } = 90f;
     }
 }

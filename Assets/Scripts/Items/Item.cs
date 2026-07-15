@@ -14,6 +14,8 @@ namespace Relentless.Items
 
         private bool _isPickedUp = false;
 
+        private void Awake() => Destroy(gameObject, _data.Lifetime);
+
         public void PickUp(GameObject picker)
         {
             if (_isPickedUp)
