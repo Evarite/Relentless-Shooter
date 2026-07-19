@@ -38,14 +38,14 @@ namespace Relentless.Player.Controls
 
         private void OnEnable()
         {
-            GameManager.InputActions.Player.Sprint.performed += OnSprintStarted;
-            GameManager.InputActions.Player.Sprint.canceled += OnSprintEnded;
+            GameManager.Instance.InputActions.Player.Sprint.performed += OnSprintStarted;
+            GameManager.Instance.InputActions.Player.Sprint.canceled += OnSprintEnded;
         }
 
         private void OnDisable()
         {
-            GameManager.InputActions.Player.Sprint.performed -= OnSprintStarted;
-            GameManager.InputActions.Player.Sprint.canceled -= OnSprintEnded;
+            GameManager.Instance.InputActions.Player.Sprint.performed -= OnSprintStarted;
+            GameManager.Instance.InputActions.Player.Sprint.canceled -= OnSprintEnded;
         }
 
         private void OnSprintStarted(InputAction.CallbackContext callbackContext)

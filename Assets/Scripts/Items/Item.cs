@@ -23,7 +23,7 @@ namespace Relentless.Items
 
             _isPickedUp = true;
 
-            InventoryController.AddItem(_data, Count);
+            InventoryController.Instance.AddItem(_data, Count);
             Destroy(gameObject);
         }
     }

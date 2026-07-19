@@ -33,10 +33,10 @@ namespace Relentless.Player.Controls
 
         private void Update()
         {
-            Vector2 rawInput = GameManager.InputActions.Player.Look.ReadValue<Vector2>();
+            Vector2 rawInput = GameManager.Instance.InputActions.Player.Look.ReadValue<Vector2>();
             _normalizedOffset = Vector2.zero;
 
-            var device = GameManager.InputActions.Player.Look.activeControl?.device;
+            var device = GameManager.Instance.InputActions.Player.Look.activeControl?.device;
 
             if (device is Mouse)
             {

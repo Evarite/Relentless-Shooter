@@ -33,7 +33,7 @@ namespace Relentless.Items
             while (count > 0)
             {
                 Vector2 direction = UnityEngine.Random.insideUnitCircle.normalized;
-                Vector2 spawnPosition = (Vector2)GameManager.Player.transform.position +
+                Vector2 spawnPosition = (Vector2)GameManager.Instance.Player.transform.position +
                     direction * dropSettings.SpawnDistance; //Player can't be null now
                 Quaternion spawnRotation = Quaternion.Euler(0, 0,
                     UnityEngine.Random.Range(dropSettings.MinSpawnAngle, dropSettings.MaxSpawnAngle)

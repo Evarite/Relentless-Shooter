@@ -18,7 +18,7 @@ namespace Relentless.CameraSystem
 
         private void OnEnable()
         {
-            if (GameManager.Player != null)
+            if (GameManager.Instance.Player != null)
                 GetPlayerTransform();
         }
 
@@ -44,8 +44,8 @@ namespace Relentless.CameraSystem
 
         private void GetPlayerTransform()
         {
-            if (GameManager.Player != null)
-                _playerTransform = GameManager.Player.transform;
+            if (GameManager.Instance.Player != null)
+                _playerTransform = GameManager.Instance.Player.transform;
         }
     }
 }

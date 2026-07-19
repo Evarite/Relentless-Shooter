@@ -52,10 +52,10 @@ namespace Relentless.Enemies.Pooling
         {
             while (true)
             {
-                if (GameManager.Player == null)
-                    yield return new WaitUntil(() => GameManager.Player != null);
+                if (GameManager.Instance.Player == null)
+                    yield return new WaitUntil(() => GameManager.Instance.Player != null);
 
-                Vector2 playerPos = GameManager.Player.transform.position;
+                Vector2 playerPos = GameManager.Instance.Player.transform.position;
 
                 if (_enemies.Count > _data.MaxEnemiesCount)
                     yield return new WaitUntil(() => _enemies.Count < _data.MaxEnemiesCount);
@@ -86,8 +86,9 @@ namespace Relentless.Enemies.Pooling
         {
             while (true)
             {
-                Vector3 playerPos = GameManager.Player != null ? GameManager.Player.transform.position :
-                Vector3.zero;
+                Vector3 playerPos = GameManager.Instance.Player != null
+                    ? GameManager.Instance.Player.transform.position
+                    : Vector3.zero;
 
                 for (int i = _enemies.Count - 1; i >= 0; i--)
                 {

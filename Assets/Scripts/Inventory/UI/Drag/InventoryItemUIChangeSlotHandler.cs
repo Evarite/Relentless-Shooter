@@ -20,7 +20,7 @@ namespace Relentless.Inventory.UI.Drag
         private void OnDisable() => _releaseHandler.OnChangeSlot -= ChangeSlot;
 
         private void ChangeSlot(InventorySlotUI newSlot) =>
-            InventoryController.ChangeSlot(InventoryUIManager.GetSlotIndex(_slot),
-                InventoryUIManager.GetSlotIndex(newSlot));
+            InventoryController.Instance.ChangeSlot(InventoryUIManager.Instance.GetSlotIndex(_slot),
+                InventoryUIManager.Instance.GetSlotIndex(newSlot));
     }
 }

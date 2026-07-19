@@ -14,18 +14,18 @@ namespace Relentless.Player.Controls
 
         private void OnEnable()
         {
-            GameManager.InputActions.Player.Attack.performed += Attack;
+            GameManager.Instance.InputActions.Player.Attack.performed += Attack;
         }
 
         private void OnDisable()
         {
-            GameManager.InputActions.Player.Attack.performed -= Attack;
+            GameManager.Instance.InputActions.Player.Attack.performed -= Attack;
         }
 
         private void Attack(InputAction.CallbackContext callbackContext)
         {
-            Vector2 rawInput = GameManager.InputActions.Player.Look.ReadValue<Vector2>();
-            var device = GameManager.InputActions.Player.Look.activeControl?.device;
+            Vector2 rawInput = GameManager.Instance.InputActions.Player.Look.ReadValue<Vector2>();
+            var device = GameManager.Instance.InputActions.Player.Look.activeControl?.device;
 
             Vector2 direction = Vector2.zero;
 

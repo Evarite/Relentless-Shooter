@@ -23,14 +23,14 @@ namespace Relentless.Player.Controls
 
         private void OnEnable()
         {
-            GameManager.InputActions.Player.Move.performed += OnMovementChanged;
-            GameManager.InputActions.Player.Move.canceled += OnMovementChanged;
+            GameManager.Instance.InputActions.Player.Move.performed += OnMovementChanged;
+            GameManager.Instance.InputActions.Player.Move.canceled += OnMovementChanged;
         }
 
         private void OnDisable()
         {
-            GameManager.InputActions.Player.Move.performed -= OnMovementChanged;
-            GameManager.InputActions.Player.Move.canceled -= OnMovementChanged;
+            GameManager.Instance.InputActions.Player.Move.performed -= OnMovementChanged;
+            GameManager.Instance.InputActions.Player.Move.canceled -= OnMovementChanged;
         }
 
         private void OnMovementChanged(InputAction.CallbackContext callbackContext)
