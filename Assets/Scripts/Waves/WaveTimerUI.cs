@@ -4,52 +4,37 @@ using UnityEngine;
 namespace Relentless.Waves
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
-    [RequireComponent(typeof(WaveTimer))]
     [AddComponentMenu("Relentless/Waves/Timer/Wave Timer UI")]
     public class WaveTimerUI : MonoBehaviour
     {
         [SerializeField] private WaveData _waveData;
+        [SerializeField] private WaveTimer _timer;
         private TextMeshProUGUI _text;
-        private WaveTimer _timer;
 
         private int _secPerMin = 60;
 
         private void Awake()
         {
             _text = GetComponent<TextMeshProUGUI>();
-            _timer = GetComponent<WaveTimer>();
-            ResetTimer();
         }
 
-        private void OnEnable()
-        {
-            _timer.OnSecondChanged += UpdateText;
-        }
+        private void OnEnable() => _timer.OnSecondChanged += UpdateText;
 
-        private void OnDisable()
-        {
-            _timer.OnSecondChanged -= UpdateText;
-        }
+        private void OnDisable() => _timer.OnSecondChanged -= UpdateText;
 
         private void UpdateText(int time)
         {
-
-            int minutes = time / _secPerMin;
-            int seconds = time % _secPerMin;
+            CalculateTime(time, out var minutes, out var seconds);
 
             SetText(minutes, seconds);
         }
 
-        private void ResetTimer()
+        private void CalculateTime(int time, out int minutes, out int seconds)
         {
-            int time = (int)_waveData.WaveCycleTime;
-
-            int minutes = time / _secPerMin;
-            int seconds = time % _secPerMin;
-
-            SetText(minutes, seconds);
+            minutes = time / _secPerMin;
+            seconds = time % _secPerMin;
         }
 
-        private void SetText(int minutes, int seconds) => _text.text = $"{minutes}:{seconds}";
+        private void SetText(int minutes, int seconds) => _text.text = $"{minutes}:{seconds:D2}";
     }
 }

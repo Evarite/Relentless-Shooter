@@ -8,38 +8,48 @@ namespace Relentless.Waves
     public class WaveTimer : MonoBehaviour
     {
         [SerializeField] private WaveData _data;
-        private float _time;
+
+        private static WaitForSeconds _firstSecondDelay = new WaitForSeconds(1f);
 
         public event Action OnTimeRanOut;
         public event Action<int> OnSecondChanged; //For UI to update only when second time changes
 
         private void Awake()
         {
-            _time = _data.WaveCycleTime;
             StartCoroutine(Timer());
         }
 
+        private void OnDisable() => StopAllCoroutines();
+
         private IEnumerator Timer()
         {
-            //So that event isn't fired at the first frame
-            _time -= Time.deltaTime;
-            int prevTime = (int)_time;
-
-            yield return null;
-
-            while (_time > 0f)
+            while (true)
             {
-                _time -= Time.deltaTime;
+                float time = _data.WaveCycleTime;
+                int displayedTime = (int)time;
 
-                if (_time <= prevTime)
-                    OnSecondChanged?.Invoke(prevTime - 1);
+                OnSecondChanged?.Invoke(displayedTime);
 
-                prevTime = (int)_time;
+                //Waiting for a second, so that the first second isn't skipped immediately
+                yield return _firstSecondDelay;
 
-                yield return null;
+                while (time > 0f)
+                {
+                    time -= Time.deltaTime;
+
+                    if (time <= 0f)
+                        break;
+
+                    if (time <= displayedTime)
+                        OnSecondChanged?.Invoke(displayedTime - 1);
+
+                    displayedTime = (int)time;
+
+                    yield return null;
+                }
+
+                OnTimeRanOut?.Invoke();
             }
-
-            OnTimeRanOut?.Invoke();
         }
     }
 }
