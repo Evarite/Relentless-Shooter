@@ -1632,51 +1632,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1125438241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1125438243}
-  - component: {fileID: 1125438242}
-  m_Layer: 0
-  m_Name: TimerController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1125438242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125438241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9377ec437f7e174684483a31ecfe883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.WaveTimer
-  _data: {fileID: 11400000, guid: 1013a27607aa9b54b83309bee0ddc3ab, type: 2}
---- !u!4 &1125438243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125438241}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1187486231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2670,7 +2625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.WaveTimerUI
   _waveData: {fileID: 11400000, guid: 1013a27607aa9b54b83309bee0ddc3ab, type: 2}
-  _timer: {fileID: 1125438242}
+  _timer: {fileID: 3897326346398319379}
 --- !u!1001 &46363038041222960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2984,6 +2939,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5702563916366594224, guid: 21d766300c2537f448b1137d8898408e, type: 3}
   m_PrefabInstance: {fileID: 6592274070733190762}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1506875084569295486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7821948177811624881}
+  - component: {fileID: 3897326346398319379}
+  - component: {fileID: 7821948177811624882}
+  m_Layer: 0
+  m_Name: TimerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1585567570431335505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,6 +4010,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5702563916366594224, guid: 21d766300c2537f448b1137d8898408e, type: 3}
   m_PrefabInstance: {fileID: 8922695885940614152}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3897326346398319379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506875084569295486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9377ec437f7e174684483a31ecfe883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.WaveTimer
+  _data: {fileID: 11400000, guid: 1013a27607aa9b54b83309bee0ddc3ab, type: 2}
 --- !u!1 &3959414462568075931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5943,6 +5929,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &7821948177811624881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506875084569295486}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7821948177811624882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506875084569295486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bba748a4f6ad14199740793173a68f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.WaveBuffing
 --- !u!1 &7849057058305050778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6490,4 +6503,4 @@ SceneRoots:
   - {fileID: 415039434}
   - {fileID: 1065215603}
   - {fileID: 1614374395}
-  - {fileID: 1125438243}
+  - {fileID: 7821948177811624881}
