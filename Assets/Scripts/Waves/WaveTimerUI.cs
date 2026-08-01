@@ -35,6 +35,8 @@ namespace Relentless.Waves
             seconds = time % _secPerMin;
         }
 
+        //fdsfasdfasd
+
         private void SetText(int minutes, int seconds) => _text.text = $"{minutes}:{seconds:D2}";
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Relentless.Enemies.Base.Data;
 using Relentless.HealthSystem;
 using Relentless.Managers;
+using Relentless.Waves;
 using System.Collections;
 using UnityEngine;
 
@@ -35,7 +36,7 @@ namespace Relentless.Enemies.Base
             while (GameManager.Instance.Player != null)
             {
                 _canAttack = false;
-                playerHealth.React(enemyData.Damage);
+                playerHealth.React(enemyData.Damage * BuffsModifiers.DamageBuffModifier);
                 StartCoroutine(AttackDelay());
                 yield return _untilAttackPossible;
             }

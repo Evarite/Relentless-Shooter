@@ -1,5 +1,6 @@
 ﻿using Relentless.Enemies.Base.Data;
 using Relentless.Managers;
+using Relentless.Waves;
 using UnityEngine;
 
 namespace Relentless.Enemies.Base
@@ -35,7 +36,7 @@ namespace Relentless.Enemies.Base
             }
 
             Vector2 direction = dif.normalized;
-            _rb.linearVelocity = direction * _enemyData.Speed;
+            _rb.linearVelocity = direction * _enemyData.Speed * BuffsModifiers.SpeedBuffModifier;
         }
     }
 }
