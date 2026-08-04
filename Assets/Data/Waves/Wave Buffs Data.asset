@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393df2b6c050e634b97d9649b75db66d, type: 3}
   m_Name: Wave Buffs Data
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.WaveEnemiesBuffData
-  _buffIterations: 1
+  _buffIterations: 5
   _speedBuffWeight: 2
   _healthBuffWeight: 3
   _damageBuffWeight: 5
   _iterationBuffWeight: 5
-  _emptyWeight: 0
+  _emptyWeight: 0.5
   _buffStep: 0.05
-  _iterationStep: 1
+  _iterationStep: 2
