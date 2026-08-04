@@ -6,9 +6,7 @@ namespace Relentless.Waves
     [RequireComponent(typeof(WaveTimer))]
     public class WaveBuffing : MonoBehaviour
     {
-        [Header("Buff Iterations")]
-        [Min(1)]
-        [SerializeField] private int _buffIterations = 1;
+        private int _buffIterations;
 
         [SerializeField] private WaveEnemiesBuffData _buffData;
 
@@ -19,6 +17,8 @@ namespace Relentless.Waves
         private void Awake()
         {
             _timer = GetComponent<WaveTimer>();
+
+            _buffIterations = _buffData.BuffIterations;
 
             _buffs.Add(new BuffOption
                 (
@@ -57,7 +57,7 @@ namespace Relentless.Waves
 
         private void Buff()
         {
-            for (int i = 0; i <= _buffIterations; i++)
+            for (int i = 0; i < _buffIterations; i++)
             {
                 float weight = Random.Range(0f, _buffData.TotalWeight);
                 float currentWeight = 0f;

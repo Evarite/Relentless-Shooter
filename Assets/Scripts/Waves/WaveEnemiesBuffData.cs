@@ -5,6 +5,10 @@ namespace Relentless.Waves
     [CreateAssetMenu(fileName = "Wave Buffs Data", menuName = "Relentless/Waves/Buffs Data")]
     public class WaveEnemiesBuffData : ScriptableObject
     {
+        [Header("Buff Iterations")]
+        [Min(1)]
+        [SerializeField] private int _buffIterations = 1;
+
         [Header("Buffs Weight")]
         [SerializeField] private float _speedBuffWeight = 2f;
         [SerializeField] private float _healthBuffWeight = 3f;
@@ -28,5 +32,6 @@ namespace Relentless.Waves
         public float TotalWeight { get => _totalWeight; }
         public float IterationBuffWeight { get => _iterationBuffWeight; }
         public int IterationStep { get => _iterationStep; }
+        public int BuffIterations { get => _buffIterations; set => _buffIterations = value; }
     }
 }
