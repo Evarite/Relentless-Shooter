@@ -39,7 +39,7 @@ namespace Relentless.Player.Weapons.Sword
             while (elapsed < data.AttackDuration)
             {
                 float t = elapsed / data.AttackDuration;
-                float easedT = Easings.EaseInOut(t);
+                float easedT = Easings.EaseInOutSine(t);
 
                 float currentAngle = totalAngle * easedT;
 
