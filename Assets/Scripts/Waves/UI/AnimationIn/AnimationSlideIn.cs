@@ -4,19 +4,9 @@ using UnityEngine;
 
 namespace Relentless.Waves.UI
 {
-    [RequireComponent(typeof(BuffUIItem))]
-    public class BuffItemSlideIn : MonoBehaviour
+    public class AnimationSlideIn : BaseAnimation //MonoBehaviour
     {
-        [SerializeField] private SlideInAnimationData _data;
-        private BuffUIItem _item;
-
-        private void Awake() => _item = GetComponent<BuffUIItem>();
-
-        private void OnEnable() => StartCoroutine(Animation());
-
-        private void OnDisable() => StopAllCoroutines();
-
-        private IEnumerator Animation()
+        protected override IEnumerator Animation()
         {
             RectTransform itemTransform = _item.Transform;
             float elapsed = 0f;
@@ -36,6 +26,18 @@ namespace Relentless.Waves.UI
                 itemTransform.localPosition = Vector3.Lerp(startPosition, goalPosition, easedT);
                 yield return null;
             }
+
+            InvokeFinished();
+
+            enabled = false;
         }
+
+#if UNITY_EDITOR
+        protected override void OnValidate()
+        {
+            if (GetComponent<InAnimationController>() == null)
+                Debug.LogError($"[{name}]: InAnimationController is not attached!");
+        }
+#endif
     }
 }

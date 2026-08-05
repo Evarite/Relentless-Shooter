@@ -2,8 +2,8 @@
 
 namespace Relentless.Waves.UI
 {
-    [CreateAssetMenu(fileName = "Slide In Data", menuName = "Relentless/Waves/Animations/Slide In")]
-    public class SlideInAnimationData : ScriptableObject
+    [CreateAssetMenu(fileName = "Animation In Data", menuName = "Relentless/Waves/Animations/In")]
+    public class AnimationData : ScriptableObject
     {
         [SerializeField] private float _duration = 1f;
         [SerializeField] private float _slideDistance = 200f;

@@ -1154,6 +1154,8 @@ GameObject:
   - component: {fileID: 679656831}
   - component: {fileID: 679656830}
   - component: {fileID: 679656829}
+  - component: {fileID: 679656833}
+  - component: {fileID: 679656832}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -1196,7 +1198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf31458e9be4b9a48bcf0dc364b2d12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.UI.BuffItemSlideIn
-  _data: {fileID: 11400000, guid: 8d2cdeb3c0f7af546aaea38df59206a6, type: 2}
 --- !u!114 &679656830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,6 +1222,31 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &679656832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679656827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271e7e17ae3f2a54bb74b96e9f23a605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.UI.InAnimationController
+  _data: {fileID: 0}
+--- !u!114 &679656833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679656827}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45f859c3f3d4b447be32c0b8c4d2a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.UI.AnimationFadeIn
 --- !u!1001 &776900314
 PrefabInstance:
   m_ObjectHideFlags: 0
