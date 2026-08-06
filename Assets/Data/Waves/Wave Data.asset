@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Wave Data
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.WaveData
   _enemyPools: []
-  _waveCycleTime: 120
+  _waveCycleTime: 15

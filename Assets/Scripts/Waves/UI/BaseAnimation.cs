@@ -7,16 +7,12 @@ namespace Relentless.Waves.UI
     [RequireComponent(typeof(BuffUIItem))]
     public abstract class BaseAnimation : MonoBehaviour
     {
-        protected AnimationData _data;
+        [SerializeField] protected AnimationData _data;
         protected BuffUIItem _item;
 
         public event Action OnFinished;
 
-        protected void Awake()
-        {
-            _item = GetComponent<BuffUIItem>();
-            _data = GetComponent<InAnimationController>().Data;
-        }
+        protected void Awake() => _item = GetComponent<BuffUIItem>();
 
         protected void OnEnable() => StartCoroutine(Animation());
 

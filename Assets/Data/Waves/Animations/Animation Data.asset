@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d69fed7ee774c24fb835780377b27bc, type: 3}
-  m_Name: Animation In Data
+  m_Name: Animation Data
   m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.UI.SlideInAnimationData
   _duration: 2
   _slideDistance: 200

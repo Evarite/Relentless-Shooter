@@ -8,7 +8,7 @@ namespace Relentless.Waves.UI
     {
         protected override IEnumerator Animation()
         {
-            RectTransform itemTransform = _item.Transform;
+            RectTransform itemTransform = _item.RectTransform;
             float elapsed = 0f;
 
             Vector3 goalPosition = itemTransform.localPosition;

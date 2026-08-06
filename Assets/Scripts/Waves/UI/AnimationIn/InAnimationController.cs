@@ -8,16 +8,12 @@ namespace Relentless.Waves.UI
     [RequireComponent(typeof(AnimationFadeIn))]
     public class InAnimationController : MonoBehaviour, IAnimationController
     {
-        [SerializeField] private AnimationData _data;
-
         private AnimationSlideIn _slideIn;
         private AnimationFadeIn _fadeIn;
 
         private int _activeAnimations = 0;
 
         private WaitUntil _waitUntilFinished;
-
-        public AnimationData Data { get => _data; }
 
         public event Action OnFinished;
 

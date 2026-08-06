@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace Relentless.Waves.UI
 {
@@ -6,15 +7,20 @@ namespace Relentless.Waves.UI
     [RequireComponent(typeof(CanvasGroup))]
     public class BuffUIItem : MonoBehaviour
     {
-        private RectTransform _transform;
+        [SerializeField] private TextMeshProUGUI _name;
+        [SerializeField] private TextMeshProUGUI _value;
+
+        private RectTransform _rectTransform;
         private CanvasGroup _canvas;
 
-        public RectTransform Transform { get => _transform; }
+        public RectTransform RectTransform { get => _rectTransform; }
         public CanvasGroup Canvas { get => _canvas; }
+        public TextMeshProUGUI Name { get => _name; set => _name = value; }
+        public TextMeshProUGUI Value { get => _value; set => _value = value; }
 
         private void Awake()
         {
-            _transform = GetComponent<RectTransform>();
+            _rectTransform = GetComponent<RectTransform>();
             _canvas = GetComponent<CanvasGroup>();
         }
     }
