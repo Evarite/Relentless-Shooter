@@ -22,6 +22,7 @@ namespace Relentless.Inventory
                 Destroy(gameObject);
                 return;
             }
+
             Instance = this;
 
             for (int i = 0; i < _inventorySize; i++)

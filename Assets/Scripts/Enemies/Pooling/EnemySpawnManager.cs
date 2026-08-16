@@ -16,20 +16,10 @@ namespace Relentless.Enemies.Pooling
         //TODO
         //Add probabilities of spawning each type of enemy
 
-        public static EnemySpawnManager Instance { get; set; }
-
         private List<PooledEntity> _enemies = new();
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            Instance = this;
-
             _waitForSpawnInterval = new WaitForSeconds(_data.SpawnInterval);
             _waitForDespawnInterval = new WaitForSeconds(_data.DespawnInterval);
 
