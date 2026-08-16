@@ -35,7 +35,7 @@ namespace Relentless.Player.Weapons.Axe
             while(elapsed < data.AttackDuration)
             {
                 float t = elapsed / data.AttackDuration;
-                float easedT = Easings.EeaseInBackOutQuart(t);
+                float easedT = Easings.EaseInBackOutQuart(t);
 
                 float currentAngle = data.MaxSwingAngle * easedT;
                 Quaternion delta = Quaternion.AngleAxis(-currentAngle, _rotationAxis);

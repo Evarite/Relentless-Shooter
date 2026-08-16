@@ -1,5 +1,4 @@
 ﻿using Relentless.Items;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Relentless.Inventory.UI.Drag
@@ -23,11 +22,12 @@ namespace Relentless.Inventory.UI.Drag
 
         private void DropItem()
         {
-            InventorySlot slot = InventoryController.GetSlot(InventoryUIManager.GetSlotIndex(_slot));
+            InventorySlot slot = InventoryController.Instance.GetSlot(
+                InventoryUIManager.Instance.GetSlotIndex(_slot));
 
             ItemDropManager.SpawnDroppedItem(slot.ItemData.Prefab, slot.Count);
 
-            InventoryController.RemoveItem(InventoryUIManager.GetSlotIndex(_slot));
+            InventoryController.Instance.RemoveItem(InventoryUIManager.Instance.GetSlotIndex(_slot));
         }
     }
 }

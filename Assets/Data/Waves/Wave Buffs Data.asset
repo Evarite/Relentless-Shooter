@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393df2b6c050e634b97d9649b75db66d, type: 3}
+  m_Name: Wave Buffs Data
+  m_EditorClassIdentifier: Assembly-CSharp::Relentless.Waves.WaveEnemiesBuffData
+  _buffIterations: 5
+  _speedBuffWeight: 2
+  _healthBuffWeight: 3
+  _damageBuffWeight: 5
+  _iterationBuffWeight: 5
+  _emptyWeight: 0.5
+  _buffStep: 0.05
+  _iterationStep: 2

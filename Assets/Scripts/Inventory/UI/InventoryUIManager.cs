@@ -11,7 +11,7 @@ namespace Relentless.Inventory.UI
 
         private void Awake()
         {
-            if(Instance != null && Instance != this)
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
                 return;
@@ -20,17 +20,17 @@ namespace Relentless.Inventory.UI
             Instance = this;
         }
 
-        private void OnEnable() => InventoryController.OnInventoryChanged += RefreshUI;
+        private void OnEnable() => InventoryController.Instance.OnInventoryChanged += RefreshUI;
 
-        private void OnDisable() => InventoryController.OnInventoryChanged -= RefreshUI;
+        private void OnDisable() => InventoryController.Instance.OnInventoryChanged -= RefreshUI;
 
         private void RefreshUI()
         {
             for (int i = 0; i < _inventorySlots.Length; i++)
-                _inventorySlots[i].SetData(InventoryController.GetSlot(i));
+                _inventorySlots[i].SetData(InventoryController.Instance.GetSlot(i));
         }
 
-        public static int GetSlotIndex(InventorySlotUI slot)
+        public int GetSlotIndex(InventorySlotUI slot)
         {
             for (int i = 0; i < Instance._inventorySlots.Length; i++)
                 if (slot == Instance._inventorySlots[i])

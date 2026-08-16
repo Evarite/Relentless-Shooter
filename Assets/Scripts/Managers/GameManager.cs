@@ -6,8 +6,8 @@ namespace Relentless.Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
-        public static InputSystemActions InputActions { get; private set; }
-        public static GameObject Player { get; private set; }
+        public InputSystemActions InputActions { get; private set; }
+        public GameObject Player { get; private set; }
 
         private void Awake()
         {
@@ -27,10 +27,10 @@ namespace Relentless.Managers
             InputActions.Dispose();
         }
 
-        public static void RegisterPlayer(GameObject player) => Player = player;
-        public static void UnregisterPlayer() => Player = null;
+        public void RegisterPlayer(GameObject player) => Player = player;
+        public void UnregisterPlayer() => Player = null;
 
-        public static void ActivatePlayer()
+        public void ActivatePlayer()
         {
             InputActions.Player.Enable();
             InputActions.Inventory.Disable();
@@ -39,7 +39,7 @@ namespace Relentless.Managers
             TimeManager.UnfreezeTime();
         }
 
-        public static void ActivateInventory()
+        public void ActivateInventory()
         {
             InputActions.Player.Disable();
             InputActions.Inventory.Enable();
@@ -48,7 +48,7 @@ namespace Relentless.Managers
             TimeManager.FreezeTime();
         }
 
-        public static void ActivatePause()
+        public void ActivatePause()
         {
             InputActions.Player.Disable();
             InputActions.Inventory.Disable();

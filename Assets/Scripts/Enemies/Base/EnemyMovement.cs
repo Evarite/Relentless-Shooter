@@ -1,5 +1,6 @@
 ﻿using Relentless.Enemies.Base.Data;
 using Relentless.Managers;
+using Relentless.Waves;
 using UnityEngine;
 
 namespace Relentless.Enemies.Base
@@ -23,10 +24,10 @@ namespace Relentless.Enemies.Base
 
         private void FixedUpdate()
         {
-            if (GameManager.Player == null)
+            if (GameManager.Instance.Player == null)
                 return;
 
-            Vector2 playerPos = GameManager.Player.transform.position;
+            Vector2 playerPos = GameManager.Instance.Player.transform.position;
             Vector2 dif = playerPos - (Vector2)transform.position;
             if (dif.sqrMagnitude <= _enemyData.StopThreshold * _enemyData.StopThreshold)
             {
@@ -35,7 +36,7 @@ namespace Relentless.Enemies.Base
             }
 
             Vector2 direction = dif.normalized;
-            _rb.linearVelocity = direction * _enemyData.Speed;
+            _rb.linearVelocity = direction * _enemyData.Speed * BuffsModifiers.SpeedBuffModifier;
         }
     }
 }

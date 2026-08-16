@@ -14,11 +14,9 @@ namespace Relentless.HealthSystem
 
         public event Action OnDamageTaken;
 
-        private void Awake()
-        {
-            CurrentHealth = _maxHealth;
-            _deathHandler = GetComponent(typeof(IDeathHandler)) as IDeathHandler;
-        }
+        private void Awake() => _deathHandler = GetComponent(typeof(IDeathHandler)) as IDeathHandler;
+
+        protected virtual void OnEnable() => CurrentHealth = _maxHealth;
 
         public void React(float damage)
         {

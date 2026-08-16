@@ -6,11 +6,11 @@ namespace Relentless.Inventory.UI
     {
         public static InventoryUITopLayer Instance { get; private set; }
 
-        private Transform _onTopLayer; 
+        private Transform _onTopLayer;
 
         private void Awake()
         {
-            if(Instance != null && Instance != this)
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
                 return;
@@ -21,6 +21,6 @@ namespace Relentless.Inventory.UI
             _onTopLayer = GetComponent<Transform>();
         }
 
-        public static Transform GetTopLayer() => Instance._onTopLayer;
+        public Transform GetTopLayer() => Instance._onTopLayer;
     }
 }

@@ -10,12 +10,12 @@ namespace Relentless.Player
 
         private void OnEnable()
         {
-            GameManager.RegisterPlayer(gameObject);
+            GameManager.Instance.RegisterPlayer(gameObject);
         }
 
         private void OnDisable()
         {
-            GameManager.UnregisterPlayer();
+            GameManager.Instance.UnregisterPlayer();
         }
     }
 }

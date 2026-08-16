@@ -8,12 +8,12 @@ namespace Relentless.Inventory
     [AddComponentMenu("Relentless/Inventory/Inventory Controller")]
     public class InventoryController : MonoBehaviour
     {
-        public InventoryController Instance { get; private set; }
+        public static InventoryController Instance { get; private set; }
 
-        private static int _inventorySize = 15;
-        private static List<InventorySlot> _inventorySlots = new List<InventorySlot>();
+        private int _inventorySize = 15;
+        private List<InventorySlot> _inventorySlots = new List<InventorySlot>();
 
-        public static event Action OnInventoryChanged;
+        public event Action OnInventoryChanged;
 
         private void Awake()
         {
@@ -28,7 +28,7 @@ namespace Relentless.Inventory
                 _inventorySlots.Add(new InventorySlot(null, 0));
         }
 
-        public static void AddItem(ItemData newItem, int count = 1)
+        public void AddItem(ItemData newItem, int count = 1)
         {
             int index = _inventorySlots.FindIndex(slot =>
             slot.ItemData != null &&
@@ -58,7 +58,7 @@ namespace Relentless.Inventory
             OnInventoryChanged?.Invoke();
         }
 
-        private static bool AddToFreeSlot(ItemData data, int count)
+        private bool AddToFreeSlot(ItemData data, int count)
         {
             bool addedSuccessfully = false;
 
@@ -82,7 +82,7 @@ namespace Relentless.Inventory
             return addedSuccessfully;
         }
 
-        public static void RemoveItem(int index)
+        public void RemoveItem(int index)
         {
             _inventorySlots[index].ItemData = null;
             _inventorySlots[index].Count = 0;
@@ -90,7 +90,7 @@ namespace Relentless.Inventory
             OnInventoryChanged?.Invoke();
         }
 
-        public static void ChangeSlot(int oldSlot, int newSlot)
+        public void ChangeSlot(int oldSlot, int newSlot)
         {
             if (_inventorySlots[newSlot].ItemData == null)
             {
@@ -100,7 +100,7 @@ namespace Relentless.Inventory
             else if (_inventorySlots[newSlot].ItemData == _inventorySlots[oldSlot].ItemData &&
                 _inventorySlots[newSlot].Count != _inventorySlots[newSlot].ItemData.MaxStackSize &&
                 _inventorySlots[oldSlot].Count != _inventorySlots[oldSlot].ItemData.MaxStackSize)
-            { 
+            {
 
             }
             else
@@ -110,6 +110,6 @@ namespace Relentless.Inventory
             OnInventoryChanged?.Invoke();
         }
 
-        public static InventorySlot GetSlot(int index) => _inventorySlots[index];
+        public InventorySlot GetSlot(int index) => _inventorySlots[index];
     }
 }

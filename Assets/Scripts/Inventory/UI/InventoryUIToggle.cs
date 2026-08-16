@@ -17,14 +17,14 @@ namespace Relentless.Inventory.UI
 
         private void OnEnable()
         {
-            GameManager.InputActions.Player.OpenInventory.performed += OpenInventory;
-            GameManager.InputActions.Inventory.CloseInventory.performed += CloseInventory;
+            GameManager.Instance.InputActions.Player.OpenInventory.performed += OpenInventory;
+            GameManager.Instance.InputActions.Inventory.CloseInventory.performed += CloseInventory;
         }
 
         private void OnDisable()
         {
-            GameManager.InputActions.Player.OpenInventory.performed -= OpenInventory;
-            GameManager.InputActions.Inventory.CloseInventory.performed -= CloseInventory;
+            GameManager.Instance.InputActions.Player.OpenInventory.performed -= OpenInventory;
+            GameManager.Instance.InputActions.Inventory.CloseInventory.performed -= CloseInventory;
         }
 
         private void OpenInventory(InputAction.CallbackContext callbackContext)

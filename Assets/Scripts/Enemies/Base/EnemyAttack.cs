@@ -1,6 +1,7 @@
 ﻿using Relentless.Enemies.Base.Data;
 using Relentless.HealthSystem;
 using Relentless.Managers;
+using Relentless.Waves;
 using System.Collections;
 using UnityEngine;
 
@@ -32,10 +33,10 @@ namespace Relentless.Enemies.Base
             if (!_canAttack)
                 yield return _untilAttackPossible;
 
-            while (GameManager.Player != null)
+            while (GameManager.Instance.Player != null)
             {
                 _canAttack = false;
-                playerHealth.React(enemyData.Damage);
+                playerHealth.React(enemyData.Damage * BuffsModifiers.DamageBuffModifier);
                 StartCoroutine(AttackDelay());
                 yield return _untilAttackPossible;
             }
@@ -55,8 +56,8 @@ namespace Relentless.Enemies.Base
             if (!collision.CompareTag(playerTag))
                 return;
 
-            if (playerHealth == null && GameManager.Player != null)
-                playerHealth = GameManager.Player.GetComponent<Health>();
+            if (playerHealth == null && GameManager.Instance.Player != null)
+                playerHealth = GameManager.Instance.Player.GetComponent<Health>();
 
             if (playerHealth == null)
                 return;

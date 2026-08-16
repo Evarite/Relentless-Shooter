@@ -4,6 +4,7 @@ namespace Relentless.Utilities
 {
     public static class Easings
     {
+        //Back
         public static float EaseInBack(float x)
         {
             const float c1 = 1.70158f;
@@ -12,11 +13,14 @@ namespace Relentless.Utilities
             return c3 * x * x * x - c1 * x * x;
         }
 
+        //Sine
+        public static float EaseInOutSine(float x) => -1 * (Mathf.Cos(Mathf.PI * x) - 1) / 2;
+
+        //Quart
         public static float EaseOutQuart(float x) => 1f - (1 - x) * (1 - x) * (1 - x) * (1 - x);
 
-        public static float EaseInOut(float x) => -1 * (Mathf.Cos(Mathf.PI * x) - 1) / 2;
-
-        public static float EeaseInBackOutQuart(float x)
+        //Custom
+        public static float EaseInBackOutQuart(float x)
         {
             return x < 0.5f
                 ? EaseInBack(x * 2f) * 0.5f

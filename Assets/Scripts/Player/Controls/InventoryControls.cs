@@ -9,20 +9,20 @@ namespace Relentless.Player.Controls
     {
         private void OnEnable()
         {
-            GameManager.InputActions.Player.OpenInventory.performed += OpenInventory;
-            GameManager.InputActions.Inventory.CloseInventory.performed += CloseInventory;
+            GameManager.Instance.InputActions.Player.OpenInventory.performed += OpenInventory;
+            GameManager.Instance.InputActions.Inventory.CloseInventory.performed += CloseInventory;
         }
 
         private void OnDisable()
         {
-            GameManager.InputActions.Player.OpenInventory.performed -= OpenInventory;
-            GameManager.InputActions.Inventory.CloseInventory.performed -= CloseInventory;
+            GameManager.Instance.InputActions.Player.OpenInventory.performed -= OpenInventory;
+            GameManager.Instance.InputActions.Inventory.CloseInventory.performed -= CloseInventory;
         }
 
         private void OpenInventory(InputAction.CallbackContext callbackContext) =>
-            GameManager.ActivateInventory();
+            GameManager.Instance.ActivateInventory();
 
         private void CloseInventory(InputAction.CallbackContext callbackContext) =>
-            GameManager.ActivatePlayer();
+            GameManager.Instance.ActivatePlayer();
     }
 }

@@ -64,7 +64,7 @@ namespace Relentless.Inventory.UI.Drag
 
             _clickOffset = _rectTransform.anchoredPosition - localPoint;
 
-            transform.SetParent(InventoryUITopLayer.GetTopLayer(), true);
+            transform.SetParent(InventoryUITopLayer.Instance.GetTopLayer(), true);
             transform.localScale = _draggingScale;
 
             //ItemTaken?.Invoke(CurrentSlot, eventData);
