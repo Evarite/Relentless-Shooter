@@ -4329,7 +4329,7 @@ MonoBehaviour:
   _data:
     _buffController: {fileID: 7821948177811624882}
     _itemAnimationGap: 0.5
-    _stayTime: 1.5
+    _stayTime: 0.5
     _startPosition: {x: -830, y: -360, z: 0}
     _xOffset: 240
     _items:
